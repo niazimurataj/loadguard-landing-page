@@ -1,12 +1,7 @@
-# React + Vite
+# Loadguard Landing Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Loadguard is a container security solution that I built to solve a problem my family business had. This problem is costing us millions and, as a low margin business, it's existential. Further, clickbait sites have capitalized on it - and banks have debanked us because of this. 
 
-Currently, two official plugins are available:
+If there was ever a pain point for a business, it'd be this.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This is my attempt to communicate what we do. This will plug into a dashboard.
