@@ -1,7 +1,8 @@
 .heroSection {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 3rem 2rem;
     background-color: #111827; /* Dark text color as background for contrast */
     color: #F9FAFB; /* Light background color as text */
@@ -10,18 +11,41 @@
     overflow: hidden;
   }
   
+  .heroSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('../assets/loadguard-hero-section.png');
+    background-size: 70% auto; /* Make image 70% of container width */
+    background-position: right center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+  
   .heroContent {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
+    justify-content: flex-start;
     width: 100%;
     max-width: 1200px;
+    margin: 0 auto;
+    z-index: 10;
   }
   
   .heroText {
-    flex: 1;
-    max-width: 550px;
+    position: relative;
+    max-width: 500px;
+    padding: 2.5rem;
+    background: rgba(17, 24, 39, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    z-index: 15;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
   
   .heroTitle {
@@ -60,44 +84,19 @@
     box-shadow: 0 7px 25px rgba(220, 38, 38, 0.3);
   }
   
-  .heroImages {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-  }
+
   
-  .imagePlaceholder, .devicePlaceholder {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 500;
-    backdrop-filter: blur(5px);
-  }
-  
-  .imagePlaceholder {
-    width: 400px;
-    height: 280px;
-    max-width: 100%;
-    object-fit: contain;
-  }
-  
-  .devicePlaceholder {
-    width: 120px;
-    height: 150px;
-  }
+
   
   /* Responsive Design for smaller screens */
   @media (max-width: 992px) {
-    .heroContent {
-      flex-direction: column;
-      text-align: center;
-      gap: 2rem;
+    .heroSection::before {
+      background-size: 75% auto; /* Slightly larger on tablets */
+    }
+    
+    .heroText {
+      max-width: 450px;
+      padding: 2rem;
     }
   
     .heroTitle {
@@ -108,16 +107,20 @@
       font-size: 1rem;
       margin-bottom: 1.2rem;
     }
-    
-    .imagePlaceholder {
-      width: 350px;
-      height: 240px;
-    }
   }
   
   @media (max-width: 768px) {
     .heroSection {
       padding: 2rem 1rem;
+    }
+    
+    .heroSection::before {
+      background-size: 80% auto; /* Larger on small tablets */
+    }
+    
+    .heroText {
+      max-width: 400px;
+      padding: 1.5rem;
     }
     
     .heroTitle {
@@ -128,17 +131,22 @@
       font-size: 0.95rem;
       margin-bottom: 1rem;
     }
-    
-    .imagePlaceholder {
-      width: 300px;
-      height: 200px;
-    }
   }
   
   @media (max-width: 576px) {
       .heroSection {
           padding: 1.5rem 1rem;
       }
+      
+      .heroSection::before {
+        background-size: 90% auto; /* Nearly full width on mobile */
+      }
+      
+      .heroText {
+        max-width: 350px;
+        padding: 1.2rem;
+      }
+      
       .heroTitle {
           font-size: 1.5rem;
           margin-bottom: 0.8rem;
@@ -146,13 +154,6 @@
       .heroDescription {
           font-size: 0.9rem;
           margin-bottom: 1rem;
-      }
-      .heroImages {
-          flex-direction: column;
-      }
-      .imagePlaceholder {
-        width: 250px;
-        height: 170px;
       }
   }
   

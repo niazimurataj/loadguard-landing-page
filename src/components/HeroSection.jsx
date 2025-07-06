@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './HeroSection.module.css';
 
 // You can import assets like images directly.
-import heroImage from '../assets/loadguard-hero-section.png';
+// import heroImage from '../assets/loadguard-hero-section.png';
 // import reeferImage from '../assets/reefer-image.png';
 
 const HeroSection = () => {
@@ -27,14 +27,6 @@ const HeroSection = () => {
           </button>
         </div>
 
-        {/* Right side: Visuals/Images */}
-        <div className={styles.heroImages}>
-            <img 
-            src={heroImage} 
-            alt="LoadGuard Anti-Contamination Thermograph" 
-            className={styles.imagePlaceholder}
-            />
-        </div>
       </div>
     </div>
   );
