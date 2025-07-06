@@ -3,7 +3,8 @@ import {
   ComposableMap,
   Geographies,
   Geography,
-  Marker
+  Marker,
+  Line // We can still draw the static route lines
 } from "react-simple-maps";
 import styles from './MapSection.module.css';
 
@@ -11,10 +12,16 @@ const geoUrl =
   "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
 const markers = [
-  { name: "Newark/Phila", coordinates: [-74.1724, 40.7357] },
+  { name: "Philadelphia", coordinates: [-75.1652, 39.9526] },
   { name: "Seattle", coordinates: [-122.3321, 47.6062] },
   { name: "Guayaquil", coordinates: [-79.8899, -2.1710] },
   { name: 'Tirana', coordinates: [19.8187, 41.3275] }
+];
+
+// We can still define the routes to draw the lines
+const routes = [
+    { from: "Guayaquil", to: "Tirana" },
+    { from: "Guayaquil", to: "Philadelphia" }
 ];
 
 const highlightedCountries = ["USA", "ECU", "ALB"];
@@ -22,9 +29,8 @@ const highlightedCountries = ["USA", "ECU", "ALB"];
 const MapSection = () => {
   return (
     <section className={styles.mapSection}>
-      <h2 className={styles.sectionTitle}>Be an Early Adopter - Pilots Live at Four Major Ports</h2>
+      <h2 className={styles.sectionTitle}>LoadGuard Pilots Already Run at Four Major Ports</h2>
       <div className={styles.mapContainer}>
-        {/* The map itself is now inside a wrapper to mask the animated border */}
         <div className={styles.mapWrapper}>
             <ComposableMap projectionConfig={{ scale: 160 }}>
               <Geographies geography={geoUrl}>
@@ -41,19 +47,23 @@ const MapSection = () => {
                   })
                 }
               </Geographies>
+              {/* Draw the routes as static dashed lines */}
+              {routes.map((route, i) => {
+                  const fromMarker = markers.find(m => m.name === route.from);
+                  const toMarker = markers.find(m => m.name === route.to);
+                  return (
+                      <Line
+                          key={`line-${i}`}
+                          from={fromMarker.coordinates}
+                          to={toMarker.coordinates}
+                          className={styles.routeLine}
+                      />
+                  );
+              })}
+              {/* Draw the location markers */}
               {markers.map(({ name, coordinates }) => (
                 <Marker key={name} coordinates={coordinates}>
-                  <g
-                    fill="none"
-                    stroke="#FF5533"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    transform="translate(-12, -24)"
-                  >
-                    <circle cx="12" cy="10" r="3" fill="white" stroke="black" strokeWidth="1.5" />
-                     <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 7.5 11.6.2.3.3.3.5.3z" fill="black"/>
-                  </g>
+                  <circle r={4} className={styles.markerDot} />
                 </Marker>
               ))}
             </ComposableMap>
