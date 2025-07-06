@@ -1,0 +1,103 @@
+.trustedBySection {
+    padding: 6rem 2rem;
+    background-color: #F9FAFB;
+    text-align: center;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+    overflow: hidden;
+  }
+  
+  .toggleWrapper {
+    display: inline-flex;
+    background-color: #E5E7EB;
+    border-radius: 9999px;
+    padding: 0.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .toggleButton {
+    background-color: transparent;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #4B5563;
+    transition: all 0.3s ease;
+  }
+  
+  .toggleButton.active {
+    background-color: white;
+    color: var(--secondary-accent);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .secondaryButton {
+    background-color: var(--secondary-accent);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+  }
+
+  .secondaryButton {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .secondaryButton:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    cursor: pointer;
+  }
+  
+  .sectionTitle {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 4rem;
+  }
+  
+  .logoGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* Give the container a fixed height */
+  }
+  
+  .logoImage {
+    max-height: 100%; /* Ensure the logo fits within the container height */
+    max-width: 150px; /* Prevent wide logos from being too large */
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .logoImage:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+      .trustedBySection {
+          padding: 4rem 1.5rem;
+      }
+      .logoGrid {
+          gap: 3rem;
+      }
+      .sectionTitle {
+          font-size: 1.5rem;
+      }
+  }
+  

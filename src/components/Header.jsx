@@ -50,7 +50,7 @@ const Header = ({ setPage }) => {
         </nav>
         <div>
           <button style={{...navButtonStyle, marginRight: '1rem'}} onClick={() => setPage('contact')}>Contact Sales</button>
-          <button style={ctaButtonStyle}>Request a Demo</button>
+          <button style={ctaButtonStyle}>Request a Pilot</button>
         </div>
       </header>
     );

@@ -17,13 +17,13 @@ const HeroSection = () => {
         {/* Left side: Text content */}
         <div className={styles.heroText}>
           <h1 className={styles.heroTitle}>
-            The Anti-Contamination Thermograph with Real-Time AI
+            A Thermograph that Prevents Contamination with Real-Time AI
           </h1>
           <p className={styles.heroDescription}>
-            LoadGuard is a platform that alerts you when your reefers are in claim condition or are contaminated, giving you the data you need to protect your cargo and protect your bottom line from compliance penalties.
+            LoadGuard is a platform that alerts you when your reefers are in claim condition or are contaminated, Get the data you need to avoid paying for claims you're not responsible for and protect your business from contamination penalties.
           </p>
           <button className={styles.ctaButton}>
-            Prevent a Contamination
+            Request a Pilot
           </button>
         </div>
 

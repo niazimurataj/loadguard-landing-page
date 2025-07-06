@@ -1,0 +1,61 @@
+.featuresSection {
+    padding: 6rem 2rem;
+    background-color: #F9FAFB; /* Your light background color */
+    text-align: center;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827; /* Your dark text color */
+    margin-bottom: 4rem;
+  }
+  
+  .featuresGrid {
+    display: grid;
+    /* Create 4 columns on desktop, but let them shrink if needed */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the grid */
+  }
+  
+  .featureCard {
+    text-align: left;
+    padding: 1.5rem;
+  }
+  
+  .iconWrapper {
+    margin-bottom: 1.5rem;
+    color: var(--secondary-accent); /* Using your blue accent color */
+  }
+  
+  .featureTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.75rem;
+  }
+  
+  .featureDescription {
+    font-size: 1rem;
+    color: #4B5563; /* A slightly lighter text color for paragraphs */
+    line-height: 1.6;
+  }
+  
+  /* Responsive adjustments for tablets and smaller devices */
+  @media (max-width: 768px) {
+    .featuresSection {
+      padding: 4rem 1.5rem;
+    }
+    .sectionTitle {
+      font-size: 2rem;
+    }
+    .featuresGrid {
+      /* Switch to 2 columns on tablets */
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .featureCard {
+      text-align: center; /* Center content on smaller screens */
+    }
+  }
