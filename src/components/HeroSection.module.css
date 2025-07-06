@@ -14,10 +14,10 @@
   .heroSection::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    top: 2rem;
+    right: 2rem;
+    bottom: 2rem;
+    left: 2rem;
     background-image: url('../assets/loadguard-hero-section.png');
     background-size: 70% auto; /* Make image 70% of container width */
     background-position: right center;
