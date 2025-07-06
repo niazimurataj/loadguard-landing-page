@@ -1,0 +1,85 @@
+.mapSection {
+    padding: 6rem 2rem;
+    /* EDITED: Changed to a dark gradient background */
+    background: linear-gradient(180deg, #1F2937 0%, #111827 100%);
+    text-align: center;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    /* EDITED: Changed text color to white for dark background */
+    color: #F9FAFB;
+    margin-bottom: 4rem;
+  }
+  
+  .mapContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px; /* Slightly larger radius */
+    padding: 3px; /* This padding creates the space for the border to be visible */
+    position: relative; /* Required for the animated pseudo-element */
+    background: #111827; /* Fallback background */
+    overflow: hidden;
+  }
+  
+  /* ADDED: Animated gradient border effect */
+  .mapContainer::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150%; /* Larger than the container to ensure full coverage when rotating */
+      height: 150%;
+      z-index: 1;
+      
+      /* A conic gradient creates a "radar sweep" effect */
+      background: conic-gradient(
+          from 0deg,
+          transparent 0%,
+          transparent 75%,
+          var(--secondary-accent) 95%, /* Your blue accent color */
+          transparent 100%
+      );
+      
+      /* The animation that rotates the gradient */
+      animation: rotateBorder 6s linear infinite;
+  }
+  
+  @keyframes rotateBorder {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  
+  /* ADDED: Wrapper to contain the map and sit on top of the animated border */
+  .mapWrapper {
+      background: #1F2937; /* Dark background for the map itself */
+      border-radius: 14px; /* Slightly smaller radius to show the parent's border */
+      position: relative;
+      z-index: 2; /* Ensures map is on top of the ::before element */
+      overflow: hidden;
+  }
+  
+  .country {
+    fill: #4B5563; /* Darker gray for non-highlighted countries */
+    stroke: #1F2937; /* Match map background for clean borders */
+    stroke-width: 0.5;
+    outline: none;
+  }
+  
+  .highlightedCountry {
+    fill: var(--primary-accent); /* Your primary red accent color */
+    stroke: #F9FAFB;
+    stroke-width: 0.5;
+    outline: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .mapSection {
+      padding: 4rem 1rem;
+    }
+    .sectionTitle {
+      font-size: 2rem;
+    }
+  }
