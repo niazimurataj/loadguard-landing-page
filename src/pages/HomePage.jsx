@@ -4,6 +4,10 @@ import TrustedBySection from '../components/TrustedBySection';
 import TestimonialSection from '../components/TestimonialSection';
 import CtaSection from '../components/ctaSection';
 import MapSection from '../components/MapSection';
+import NewsSection from '../components/NewsSection';
+import AdversaryUniverseSection from '../components/AdversaryUniverseSection';
+import OfferingsSection from '../components/OfferingsSection';
+import OfferingsGrid from '../components/OfferingsGrid';
 
 const HomePage = () => {
     return (
@@ -13,6 +17,10 @@ const HomePage = () => {
             <TrustedBySection />
             <TestimonialSection />
             <MapSection />
+            <OfferingsSection />
+            <OfferingsGrid />
+            <NewsSection />
+            <AdversaryUniverseSection />
             <CtaSection />
         </div>
     )

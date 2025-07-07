@@ -47,6 +47,7 @@ const Header = ({ setPage }) => {
           <button style={navButtonStyle} onClick={() => setPage('home')}>Platform</button>
           <button style={navButtonStyle} onClick={() => setPage('solutions')}>Solutions</button>
           <button style={navButtonStyle} onClick={() => setPage('about')}>About Us</button>
+          <button style={navButtonStyle} onClick={() => setPage('blog')}>Blog</button>
         </nav>
         <div>
           <button style={{...navButtonStyle, marginRight: '1rem'}} onClick={() => setPage('contact')}>Contact Sales</button>

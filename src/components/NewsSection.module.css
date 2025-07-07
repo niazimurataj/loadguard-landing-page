@@ -1,0 +1,38 @@
+.newsSection {
+    padding: 6rem 2rem;
+    background-color: #FFFFFF; /* A clean white background for this section */
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+  }
+  
+  .viewAllLink {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-accent);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  
+  .viewAllLink:hover {
+    opacity: 0.8;
+  }
+  
+  .postsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }

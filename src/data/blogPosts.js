@@ -1,6 +1,6 @@
 import placeholder1 from '../assets/cocaine_blog.png';
-import placeholder2 from '../assets/placeholder-image-2.png';
-import placeholder3 from '../assets/placeholder-image-3.png';
+import placeholder2 from '../assets/msc_guayane.png';
+import placeholder3 from '../assets/claim_bananas.jpg';
 
 export const blogPosts = [
   {
