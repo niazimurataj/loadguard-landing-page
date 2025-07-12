@@ -28,6 +28,9 @@ const AdversaryUniverseSection = () => {
         </div>
 
       </div>
+    <div style={{ height: '2rem' }} />
+    <hr className={styles.sectionDivider} />
+    <div style={{ height: '2rem' }} />
     </section>
   );
 };

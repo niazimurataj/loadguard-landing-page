@@ -25,7 +25,7 @@
   .offeringsList {
     display: flex;
     flex-direction: column;
-    gap: 6rem; /* Space between each offering row */
+    gap: 6rem;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -36,7 +36,6 @@
     gap: 5rem;
   }
   
-  /* Create the alternating layout */
   .offeringItem:nth-child(even) {
     flex-direction: row-reverse;
   }
@@ -72,24 +71,22 @@
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    background-color: #E5E7EB; /* Fallback color */
   }
   
-  .imagePlaceholder {
+  /* 4. Added styles for the image itself */
+  .offeringImage {
     width: 100%;
     height: 100%;
-    background-color: #E5E7EB;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    color: #9CA3AF;
+    object-fit: cover; /* This is crucial: it makes the image cover the container without distortion */
   }
+  
   
   /* Responsive adjustments */
   @media (max-width: 992px) {
     .offeringItem,
     .offeringItem:nth-child(even) {
-      flex-direction: column-reverse; /* Stack image on top of text */
+      flex-direction: column-reverse;
       gap: 2rem;
       text-align: center;
     }

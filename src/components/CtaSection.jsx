@@ -15,7 +15,7 @@ const CtaSection = () => {
         </h3>
         <div className={styles.buttonGroup}>
           <button className={styles.primaryButton}>Start Your Pilot</button>
-          <button className={styles.secondaryButton}>Contact Sales</button>
+          <button className={styles.secondaryButton}>Speak to an Expert</button>
         </div>
       </div>
     </section>

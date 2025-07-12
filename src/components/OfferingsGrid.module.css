@@ -1,84 +1,95 @@
 .gridSection {
-    padding: 6rem 2rem;
-    background-color: #F9FAFB;
-  }
-  
-  .intro {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 4rem auto;
-  }
-  
-  .sectionTitle {
-    font-size: 2.75rem;
-    font-weight: 700;
-    color: var(--text-color);
-  }
-  
-  .gridContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .gridColumn {
-    padding: 1rem;
-  }
-  
-  .categoryTitle {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #6B7280; /* A muted gray for the category title */
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 2rem;
-  }
-  
-  .itemList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .itemIcon {
-    font-size: 1.5rem;
-    /* You can replace the emoji with an SVG icon component for a more professional look */
-  }
-  
-  .itemLink {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--text-color);
-    text-decoration: none;
-    position: relative;
-    padding-bottom: 4px;
-  }
-  
-  /* Underline effect on hover */
-  .itemLink::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--secondary-accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-  }
-  
-  .itemLink:hover::after {
-    transform: scaleX(1);
-  }
+  padding: 6rem 2rem;
+  background-color: #F9FAFB;
+}
+
+.intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+}
+
+.sectionTitle {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* This is the key rule that creates the grid layout */
+.gridContainer {
+  display: grid;
+  /* This creates responsive columns: they will be at least 250px wide
+     and will automatically fit as many as possible per row. */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gridColumn {
+  padding: 1rem;
+}
+
+.categoryTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+}
+
+.itemList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.itemIcon {
+  color: var(--secondary-accent);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemIcon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.itemLink {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* Underline effect on hover */
+.itemLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.itemLink:hover::after {
+  transform: scaleX(1);
+}
