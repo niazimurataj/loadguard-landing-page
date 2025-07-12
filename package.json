@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dotenv": "^17.2.0",
     "framer-motion": "^12.23.0",
+    "mapbox-gl": "^3.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-map-gl": "^8.0.4",
     "react-simple-maps": "^3.0.0"
   },
   "devDependencies": {

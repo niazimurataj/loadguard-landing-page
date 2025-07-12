@@ -7,6 +7,7 @@ import ContactPage from './pages/ContactPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BlogPage from './pages/BlogPage';
+import LoginPage from './pages/Login';
 
 export default function App() {
   const [page, setPage] = useState('home');
@@ -24,6 +25,8 @@ export default function App() {
         return <ContactPage />;
       case 'blog':
         return <BlogPage />;
+      case 'login':
+        return <LoginPage />;
       default:
         return <HomePage />;
     }

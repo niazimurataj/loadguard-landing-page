@@ -9,7 +9,7 @@ const Footer = () => {
     
     return (
         <footer style={footerStyle}>
-            <p>&copy; {new Date().getFullYear()} LoadGuard Technologies Inc. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Project LoadGuard, Inc. All rights reserved.</p>
         </footer>
     );
 }
