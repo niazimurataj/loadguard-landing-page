@@ -12,7 +12,9 @@ import LoginPage from './pages/Login';
 export default function App() {
   const [page, setPage] = useState('home');
 
+
   // This function will render the correct page based on the 'page' state.
+  // This is also called a handler function.
   const renderPage = () => {
     switch (page) {
       case 'home':
