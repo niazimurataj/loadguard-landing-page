@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import BlogPage from './pages/BlogPage';
 import LoginPage from './pages/Login';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 export default function App() {
   const [page, setPage] = useState('home');

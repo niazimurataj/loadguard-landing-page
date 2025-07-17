@@ -30,3 +30,11 @@ main {
   flex-grow: 1;
   padding: 2rem;
 }
+
+.gradient-background {
+  background: linear-gradient(180deg, #1F2937 0%, #111827 100%);
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}

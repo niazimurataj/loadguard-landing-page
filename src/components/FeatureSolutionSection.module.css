@@ -1,0 +1,89 @@
+.featureSection {
+  padding: 6rem 2rem;
+  background-color: #111827;
+  color: #F9FAFB;
+}
+
+.intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+}
+
+.sectionTitle {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: #D1D5DB;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gridColumn {
+  padding: 1rem;
+}
+
+.categoryTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+}
+
+.itemList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.itemIcon {
+  color: var(--primary-accent);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemIcon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.itemName {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #F9FAFB;
+}
+
+@media (max-width: 768px) {
+  .featureSection {
+    padding: 4rem 1.5rem;
+  }
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
+}
