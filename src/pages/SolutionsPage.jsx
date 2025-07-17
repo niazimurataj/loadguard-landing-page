@@ -4,6 +4,10 @@ import HardwareSolutionHero from '../components/HardwareSolutionHero.jsx';
 import FeatureSolutionSection from '../components/FeatureSolutionSection.jsx';
 import ContractBanner from '../components/ContractBanner.jsx';
 import MarketComparison from '../components/MarketComparison.jsx';
+import CtaSection from '../components/CtaSection.jsx';
+import SoftwareSolutionHero from '../components/SoftwareSolutionHero.jsx';
+import SoftwareFeatureSection from '../components/SoftwareFeatureSection.jsx';
+import SoftwareMarketComparison from '../components/SoftwareMarketComparison.jsx';
 
 const SolutionsPage = () => {
   const [activeSolution, setActiveSolution] = useState('hardware');
@@ -37,12 +41,14 @@ const SolutionsPage = () => {
           <FeatureSolutionSection />
           <ContractBanner />
           <MarketComparison />
+          <CtaSection />
         </>
       ) : (
         <div>
-          {/* Placeholder for Software Solution Component */}
-          <h2>Software Solution</h2>
-          <p>Software solution content goes here.</p>
+          <SoftwareSolutionHero />
+          <SoftwareFeatureSection />
+          <SoftwareMarketComparison />
+          <CtaSection />
         </div>
       )}
     </div>

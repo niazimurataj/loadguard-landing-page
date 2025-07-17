@@ -3,52 +3,42 @@ import styles from './MarketComparison.module.css';
 
 // --- Data & Positioning Logic ---
 
-const competitorRanks = [
-  { name: 'Sensitech', rank_y: 2, rank_x: 2 },
-  { name: 'CLCircular', rank_y: 8, rank_x: 4 },
-  { name: 'Delta Trak', rank_y: 1, rank_x: 1 },
-  { name: 'ORBCOMM', rank_y: 3, rank_x: 3 },
-  { name: 'Tive', rank_y: 4, rank_x: 4 },
-  { name: 'Controlant', rank_y: 6, rank_x: 5 },
-  { name: 'Elitech', rank_y: 7, rank_x: 6 },
-  { name: 'Copeland', rank_y: 5, rank_x: 7 },
-  { name: 'Monnit', rank_y: 9, rank_x: 8 },
-  { name: 'CAS DataLoggers', rank_y: 10, rank_x: 9 },
-  { name: 'Infratab', rank_y: 11, rank_x: 10 },
-  { name: 'Klinge Corporation', rank_y: 12, rank_x: 11 },
-  { name: 'Onset', rank_y: 13, rank_x: 12 },
-  { name: 'LogTag Recorders', rank_y: 14, rank_x: 13 },
-  { name: 'Tempmate', rank_y: 15, rank_x: 14 },
-  { name: 'Peli BioThermal', rank_y: 16, rank_x: 15 },
-  { name: 'Cold Chain Technologies', rank_y: 17, rank_x: 16 },
-  { name: 'Testo', rank_y: 18, rank_x: 17 },
-  { name: 'Libero', rank_y: 19, rank_x: 18 },
-  { name: 'Berlinger', rank_y: 20, rank_x: 19 },
-  { name: 'NXP Semiconductors', rank_y: 21, rank_x: 20 },
-  { name: 'Zest Labs', rank_y: 22, rank_x: 21 },
+// Manually curated positions for a more natural distribution across all quadrants.
+const competitorData = [
+  // Top-Right: Specialized Solutions
+  { name: 'Delta Trak', x: 82, y: 73 },
+  { name: 'Sensitech', x: 76, y: 80 },
+  { name: 'CLCircular', x: 68, y: 65 },
+
+  // Top-Left: Broad Platforms
+  { name: 'ORBCOMM', x: 35, y: 85 },
+  { name: 'Tive', x: 40, y: 78 },
+  { name: 'Copeland', x: 28, y: 72 },
+  { name: 'Controlant', x: 42, y: 60 },
+
+  // Bottom-Left: Traditional Loggers
+  { name: 'Elitech', x: 25, y: 48 },
+  { name: 'Monnit', x: 38, y: 42 },
+  { name: 'CAS DataLoggers', x: 22, y: 38 },
+  { name: 'LogTag Recorders', x: 33, y: 30 },
+  { name: 'Tempmate', x: 26, y: 24 },
+  { name: 'Peli BioThermal', x: 18, y: 20 },
+  { name: 'Cold Chain Technologies', x: 30, y: 15 },
+  { name: 'Testo', x: 15, y: 34 },
+  { name: 'Libero', x: 40, y: 28 },
+  { name: 'Berlinger', x: 12, y: 12 },
+  { name: 'NXP Semiconductors', x: 20, y: 8 },
+  { name: 'Zest Labs', x: 8, y: 6 },
+  
+  // Bottom-Right: Niche Innovators
+  { name: 'Infratab', x: 60, y: 45 },
+  { name: 'Klinge Corporation', x: 70, y: 35 },
+  { name: 'Onset', x: 75, y: 25 },
 ];
 
-const mapRankToPosition = (rank, totalItems) => {
-    const minPos = 10;
-    const maxPos = 90;
-    const invertedRank = totalItems + 1 - rank;
-    return ((invertedRank - 1) / (totalItems - 1)) * (maxPos - minPos) + minPos;
-};
+// Repositioned LoadGuard to be squarely in the quadrant.
+const loadGuard = { name: 'LoadGuard', x: 85, y: 85 };
 
-// NEW: Adds a random offset to a value to create "jitter"
-// The multiplier (e.g., 8) controls the maximum spread.
-const addJitter = (value) => {
-    return value + (Math.random() - 0.5) * 8;
-};
-
-const totalCompetitors = competitorRanks.length;
-const competitorData = competitorRanks.map(c => ({
-  name: c.name,
-  x: addJitter(mapRankToPosition(c.rank_x, totalCompetitors)),
-  y: addJitter(mapRankToPosition(c.rank_y, totalCompetitors)),
-}));
-
-const loadGuard = { name: 'LoadGuard', x: 92, y: 98 };
 
 // --- Component ---
 const MarketComparison = () => {
@@ -67,7 +57,6 @@ const MarketComparison = () => {
         </div>
         
         <div className={styles.chart}>
-          {/* UPDATED: Quadrant Names */}
           <div className={`${styles.quadrantLabel} ${styles.topLeft}`}>Broad Platforms</div>
           <div className={`${styles.quadrantLabel} ${styles.topRight}`}>Specialized Solutions</div>
           <div className={`${styles.quadrantLabel} ${styles.bottomLeft}`}>Traditional Loggers</div>

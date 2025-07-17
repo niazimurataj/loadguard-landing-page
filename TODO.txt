@@ -1,0 +1,5 @@
+[] Edit copy: make this more personalized to BANANA exporters, period, rather 
+than general temperature logging
+  - but first, just get it up and running - do a rough draft then optimize
+
+  
