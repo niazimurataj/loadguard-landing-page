@@ -8,6 +8,9 @@ import CtaSection from '../components/CtaSection.jsx';
 import SoftwareSolutionHero from '../components/SoftwareSolutionHero.jsx';
 import SoftwareFeatureSection from '../components/SoftwareFeatureSection.jsx';
 import SoftwareMarketComparison from '../components/SoftwareMarketComparison.jsx';
+import CircularSupplyChain from '../components/CircularSupplyChain.jsx';
+import InstallationGuide from '../components/InstallationGuide.jsx';
+import FAQ from '../components/FAQ.jsx';  
 
 const SolutionsPage = () => {
   const [activeSolution, setActiveSolution] = useState('hardware');
@@ -41,6 +44,9 @@ const SolutionsPage = () => {
           <FeatureSolutionSection />
           <ContractBanner />
           <MarketComparison />
+          <CircularSupplyChain />
+          <InstallationGuide />
+          <FAQ />
           <CtaSection />
         </>
       ) : (
@@ -48,6 +54,9 @@ const SolutionsPage = () => {
           <SoftwareSolutionHero />
           <SoftwareFeatureSection />
           <SoftwareMarketComparison />
+          <CircularSupplyChain />
+          <InstallationGuide />
+          <FAQ />
           <CtaSection />
         </div>
       )}

@@ -1,0 +1,32 @@
+.section {
+  background-color: #111827;
+  padding: 6rem 2rem;
+  text-align: center;
+  color: #F9FAFB;
+}
+
+.header {
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #F9FAFB;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #D1D5DB;
+  line-height: 1.6;
+}
+
+.placeholder {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem;
+  border: 2px dashed #4B5563;
+  border-radius: 8px;
+}

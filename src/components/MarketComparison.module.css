@@ -1,7 +1,8 @@
 .section {
-  background-color: var(--background-color, #F9FAFB);
+  background-color: #111827;
   padding: 6rem 2rem;
   text-align: center;
+  color: #F9FAFB;
 }
 
 .header {
@@ -12,13 +13,13 @@
 .title {
   font-size: 2.75rem;
   font-weight: 800;
-  color: var(--text-color, #111827);
+  color: #F9FAFB;
   margin-bottom: 1rem;
 }
 
 .subtitle {
   font-size: 1.2rem;
-  color: #4B5563;
+  color: #D1D5DB;
   line-height: 1.6;
 }
 
@@ -61,7 +62,7 @@
 .xAxisLabel, .yAxisLabel {
   position: absolute;
   font-weight: 600;
-  color: #4B5563;
+  color: #D1D5DB;
   font-size: 0.9rem;
 }
 
@@ -109,7 +110,7 @@
 
 .dotLabel {
   font-size: 0.75rem;
-  color: #4B5563;
+  color: #D1D5DB;
   margin-top: 6px;
   white-space: nowrap;
 }
