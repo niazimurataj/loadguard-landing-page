@@ -1,5 +1,19 @@
+import React from 'react';
+import styles from './ContactPage.module.css';
+import ContactForm from '../components/ContactForm';
+import ContactInfo from '../components/ContactInfo';
+
 const ContactPage = () => {
-    return <div><h1>Contact Page</h1><p>Contact form and information.</p></div>;
-}
+  return (
+    <div className={styles.pageContainer}>
+      <div className={styles.leftSide}>
+        <ContactInfo />
+      </div>
+      <div className={styles.rightSide}>
+        <ContactForm />
+      </div>
+    </div>
+  );
+};
 
 export default ContactPage;

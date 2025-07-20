@@ -1,0 +1,24 @@
+.infoContainer {
+  color: #F9FAFB;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.infoItem {
+  margin-bottom: 1.5rem;
+}
+
+.infoItem h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.infoItem p {
+  font-size: 1.1rem;
+  color: #D1D5DB;
+}
