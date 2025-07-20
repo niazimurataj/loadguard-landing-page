@@ -2,4 +2,43 @@
 than general temperature logging
   - but first, just get it up and running - do a rough draft then optimize
 
+[] Move the legal services, PR monitoring etc to the solutions software tab - and replace in home page
+with general "Agentic Services"
+
+[] About us page
+   [] ChatGPT our faces into professional looking headshots; fill out about us section
+   [] add "places where we've worked", copy trusted-by greyover effect
+   [] add linkedin profiles and x profile sunderneath each bio
+   [] write bios
+   [] write blurb on loadguard origin story
+      [] add banaking articles and rationale 
+
+[] Fill in "Contact us" page 
+    [] create a submittable form that alerts both our emails and our text messages
+    [] add captcha    
+
+[] Add "for investors" page 
+    [] add pitch deck
+    [] add evidence of traction
+
+[] Add articles to blog
+   [] add debanking articles
+   [] add "consequences" article
+   [] add csae studies article - use Pplx to aggregate and create the article
+   [] add a technical blog chronology
+      [] pictures of the initial prototype
+      [] whta inspired this
+      [] our first prototypical deployment (Durres cop situation)
+      [] meeting Akshay
+      [] Guido Verbeck
+      [] our first prototype 
+      [] our first prototype launch
+      [] Get gpt to suggest and generate additional articles (make a Jupyter notebook)
+  [] Create a PDF "2025 contamination report" to look super official :)
+
+
+[] launch site on Vercel!
+
+[] remove Vite + React logo and tab show and replace w/ loadguard logo and tab name 
+
   

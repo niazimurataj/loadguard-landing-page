@@ -1,0 +1,23 @@
+.section {
+  background-color: #F9FAFB;
+  padding: 6rem 2rem;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+.text {
+  font-size: 1.2rem;
+  color: #4B5563;
+  line-height: 1.8;
+}
