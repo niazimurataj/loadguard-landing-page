@@ -5,6 +5,7 @@ import OurTeam from '../components/OurTeam';
 import CtaSection from '../components/CtaSection';
 
 const AboutPage = () => {
+    {/* TODO: add bios, photos, shareable story and etc */}
   return (
     <div>
       <AboutHero />
