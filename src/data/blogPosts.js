@@ -28,5 +28,37 @@ export const blogPosts = [
     imageUrl: placeholder3,
     date: 'June 15, 2025',
   },
+  {
+    id: 4,
+    category: 'Technology',
+    title: 'The Power of Real-Time Monitoring',
+    summary: 'A look at how real-time data for temperature, humidity, light, and GPS is changing the game for perishable logistics.',
+    imageUrl: placeholder1,
+    date: 'July 10, 2025',
+  },
+  {
+    id: 5,
+    category: 'Security',
+    title: 'AI-Powered Alerts: Your First Line of Defense',
+    summary: 'Our system proactively alerts you to potential contamination or security breaches, giving you the time you need to take action and prevent loss.',
+    imageUrl: placeholder2,
+    date: 'July 12, 2025',
+  },
+  {
+    id: 6,
+    category: 'Compliance',
+    title: 'The Unbreakable Chain: Ensuring Traceability',
+    summary: 'Generate immutable, time-stamped reports to prove container integrity, simplify claims processing, and meet regulatory compliance.',
+    imageUrl: placeholder3,
+    date: 'July 14, 2025',
+  },
+  {
+    id: 7,
+    category: 'Partnerships',
+    title: 'Seamless Integration for a Smarter Supply Chain',
+    summary: 'Seamlessly share data with customs officials, insurance providers, and logistics partners to streamline your entire supply chain.',
+    imageUrl: placeholder1,
+    date: 'July 16, 2025',
+  },
   // Add more blog posts here
 ];
