@@ -1,0 +1,60 @@
+.section {
+  background-color: #111827;
+  padding: 6rem 2rem;
+  color: #F9FAFB;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: 800;
+}
+
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #4B5563;
+  transform: translateX(-50%);
+}
+
+.timelineItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.timelineItem:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.timelineYear {
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 0 2rem;
+}
+
+.timelineEvent {
+  width: 40%;
+  background-color: #1F2937;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}

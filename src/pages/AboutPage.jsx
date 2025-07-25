@@ -11,6 +11,8 @@ const AboutPage = () => {
       <AboutHero />
       <OurMission />
       <OurTeam />
+      <OurValues />
+      <CompanyTimeline />
       <CtaSection />
     </div>
   );
