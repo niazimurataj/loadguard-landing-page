@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import HomePage from './pages/HomePage';
 import SolutionsPage from './pages/SolutionsPage';
@@ -8,33 +9,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import BlogPage from './pages/BlogPage';
 import LoginPage from './pages/Login';
+import SinglePostPage from './pages/SinglePostPage';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 export default function App() {
-  const [page, setPage] = useState('home');
-
-
-  // This function will render the correct page based on the 'page' state.
-  // This is also called a handler function.
-  const renderPage = () => {
-    switch (page) {
-      case 'home':
-        return <HomePage />;
-      case 'solutions':
-        return <SolutionsPage />;
-      case 'about':
-        return <AboutPage />;
-      case 'contact':
-        return <ContactPage />;
-      case 'blog':
-        return <BlogPage />;
-      case 'login':
-        return <LoginPage />;
-      default:
-        return <HomePage />;
-    }
-  };
-
   const appContainerStyle = {
       display: 'flex',
       flexDirection: 'column',
@@ -45,21 +23,25 @@ export default function App() {
 
   const mainContentStyle = {
       flexGrow: 1,
-      padding: '2rem',
   };
 
-
   return (
-    <div style={appContainerStyle}>
-      {/* The Header component gets the 'setPage' function so it can change the view */}
-      <Header setPage={setPage} />
-      
-      <main style={mainContentStyle}>
-        {/* The conditional rendering happens here */}
-        {renderPage()}
-      </main>
-      
-      <Footer />
-    </div>
+    <Router>
+      <div style={appContainerStyle}>
+        <Header />
+        <main style={mainContentStyle}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/solutions" element={<SolutionsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<SinglePostPage />} />
+            <Route path="/login" element={<LoginPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }

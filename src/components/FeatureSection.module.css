@@ -1,61 +1,64 @@
 .featuresSection {
-    padding: 6rem 2rem;
-    background-color: #F9FAFB; /* Your light background color */
-    text-align: center;
-  }
-  
-  .sectionTitle {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #111827; /* Your dark text color */
-    margin-bottom: 4rem;
-  }
-  
-  .featuresGrid {
-    display: grid;
-    /* Create 4 columns on desktop, but let them shrink if needed */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto; /* Center the grid */
-  }
-  
-  .featureCard {
-    text-align: left;
-    padding: 1.5rem;
-  }
-  
-  .iconWrapper {
-    margin-bottom: 1.5rem;
-    color: var(--secondary-accent); /* Using your blue accent color */
-  }
-  
-  .featureTitle {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 0.75rem;
-  }
-  
-  .featureDescription {
-    font-size: 1rem;
-    color: #4B5563; /* A slightly lighter text color for paragraphs */
-    line-height: 1.6;
-  }
-  
-  /* Responsive adjustments for tablets and smaller devices */
-  @media (max-width: 768px) {
-    .featuresSection {
-      padding: 4rem 1.5rem;
-    }
-    .sectionTitle {
-      font-size: 2rem;
-    }
-    .featuresGrid {
-      /* Switch to 2 columns on tablets */
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-    .featureCard {
-      text-align: center; /* Center content on smaller screens */
-    }
-  }
+  padding: 6rem 2rem;
+  background-color: #F9FAFB;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1F2937;
+  margin-bottom: 4rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featureCard {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.iconWrapper {
+  margin-bottom: 1.5rem;
+  color: var(--primary-accent);
+}
+
+.featureTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.featureDescription {
+  font-size: 1.1rem;
+  color: #4B5563;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.learnMore {
+  color: var(--primary-accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.learnMore:hover {
+  color: #B91C1C;
+}

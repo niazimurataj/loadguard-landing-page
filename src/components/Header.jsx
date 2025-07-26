@@ -1,7 +1,8 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/lg-logo.png';
 
-const Header = ({ setPage }) => {
-    // Styles are defined as JavaScript objects.
+const Header = () => {
     const headerStyle = {
       display: 'flex',
       justifyContent: 'space-between',
@@ -14,7 +15,8 @@ const Header = ({ setPage }) => {
     const logoStyle = {
       fontSize: '1.5rem',
       fontWeight: 'bold',
-      cursor: 'pointer',
+      textDecoration: 'none',
+      color: 'inherit',
     };
   
     const navStyle = {
@@ -22,12 +24,10 @@ const Header = ({ setPage }) => {
       gap: '1.5rem',
     };
     
-    const navButtonStyle = {
-        background: 'none',
-        border: 'none',
-        cursor: 'pointer',
-        fontSize: '1rem',
+    const navLinkStyle = {
+        textDecoration: 'none',
         color: '#4B5563',
+        fontSize: '1rem',
     };
   
     const ctaButtonStyle = {
@@ -38,11 +38,12 @@ const Header = ({ setPage }) => {
       borderRadius: '0.5rem',
       cursor: 'pointer',
       fontWeight: 'bold',
+      textDecoration: 'none',
     };
   
     return (
       <header style={headerStyle}>
-        <div style={logoStyle} onClick={() => setPage('home')}>
+        <Link to="/" style={logoStyle}>
           <span style={{
             display: 'flex',
             alignItems: 'center',
@@ -67,18 +68,17 @@ const Header = ({ setPage }) => {
               LOADGUARD
             </span>
           </span>
-        </div>
+        </Link>
         <nav style={navStyle}>
-          <button style={navButtonStyle} onClick={() => setPage('home')}>Platform</button>
-          <button style={navButtonStyle} onClick={() => setPage('solutions')}>Solutions</button>
-          <button style={navButtonStyle} onClick={() => setPage('about')}>About Us</button>
-          <button style={navButtonStyle} onClick={() => setPage('blog')}>Blog</button>
+          <Link to="/" style={navLinkStyle}>Platform</Link>
+          <Link to="/solutions" style={navLinkStyle}>Solutions</Link>
+          <Link to="/about" style={navLinkStyle}>About Us</Link>
+          <Link to="/blog" style={navLinkStyle}>Blog</Link>
         </nav>
         <div>
-          <button style={{...navButtonStyle, marginRight: '1rem'}} onClick={() => setPage('contact')}>Contact Us</button>
-          <button style={ctaButtonStyle}>Request a Pilot</button> {/* Sends to form, use Vapi to call them as alternative to form */}
-          <button
-            style={{
+          <Link to="/contact" style={{...navLinkStyle, marginRight: '1rem'}}>Contact Us</Link>
+          <Link to="/contact" style={ctaButtonStyle}>Request a Pilot</Link>
+          <Link to="/login" style={{
               ...ctaButtonStyle,
               marginRight: '1rem',
               backgroundColor: '#2563EB', // Secondary Accent (blue-600)
@@ -101,10 +101,9 @@ const Header = ({ setPage }) => {
               e.currentTarget.style.transform = 'none';
               e.currentTarget.style.boxShadow = 'none';
             }}
-            onClick={() => setPage('login')}
           >
             Login
-          </button>
+          </Link>
         </div>
       </header>
     );

@@ -11,6 +11,7 @@ export const blogPosts = [
     imageUrl: placeholder1,
     date: 'July 5, 2025',
     featured: true,
+    slug: 'hidden-costs-of-contamination',
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ export const blogPosts = [
     summary: 'Beyond simple temperature logging, AI is now proactively identifying security threats before they become disasters.',
     imageUrl: placeholder2,
     date: 'June 28, 2025',
+    slug: 'ai-revolutionizing-security',
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ export const blogPosts = [
     summary: 'Learn how immutable chain-of-custody data from LoadGuard can streamline your compliance and reduce inspection times.',
     imageUrl: placeholder3,
     date: 'June 15, 2025',
+    slug: 'navigating-ctpat-and-basc',
   },
   {
     id: 4,
@@ -35,6 +38,7 @@ export const blogPosts = [
     summary: 'A look at how real-time data for temperature, humidity, light, and GPS is changing the game for perishable logistics.',
     imageUrl: placeholder1,
     date: 'July 10, 2025',
+    slug: 'power-of-real-time-monitoring',
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ export const blogPosts = [
     summary: 'Our system proactively alerts you to potential contamination or security breaches, giving you the time you need to take action and prevent loss.',
     imageUrl: placeholder2,
     date: 'July 12, 2025',
+    slug: 'ai-powered-alerts',
   },
   {
     id: 6,
@@ -51,6 +56,7 @@ export const blogPosts = [
     summary: 'Generate immutable, time-stamped reports to prove container integrity, simplify claims processing, and meet regulatory compliance.',
     imageUrl: placeholder3,
     date: 'July 14, 2025',
+    slug: 'unbreakable-chain-traceability',
   },
   {
     id: 7,
@@ -59,6 +65,7 @@ export const blogPosts = [
     summary: 'Seamlessly share data with customs officials, insurance providers, and logistics partners to streamline your entire supply chain.',
     imageUrl: placeholder1,
     date: 'July 16, 2025',
+    slug: 'seamless-integration',
   },
   {
     id: 8,
@@ -67,6 +74,7 @@ export const blogPosts = [
     summary: 'A practical guide to meeting strict EU regulations. Learn how proactive VOC and ethylene monitoring can prevent costly rejections and delays at ports like Rotterdam and Hamburg.',
     imageUrl: placeholder2,
     date: 'July 18, 2025',
+    slug: 'eu-phytosanitary-hurdles',
   },
   {
     id: 9,
@@ -75,6 +83,7 @@ export const blogPosts = [
     summary: 'Narcotrafficking is a top risk for exporters. We break down how real-time alerts and an immutable chain of custody can protect your containers, your reputation, and your BASC certification.',
     imageUrl: placeholder1,
     date: 'July 20, 2025',
+    slug: 'contamination-threat-beyond-spoilage',
   },
   {
     id: 10,
@@ -83,6 +92,7 @@ export const blogPosts = [
     summary: 'Every day at sea impacts your bottom line. Discover the science of ethylene control and precise temperature management to deliver perfectly yellow bananas and minimize quality claims.',
     imageUrl: placeholder3,
     date: 'July 22, 2025',
-  },
+    slug: 'mastering-ripening-long-haul',
+  }
   // Add more blog posts here
 ];
