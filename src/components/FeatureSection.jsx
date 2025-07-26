@@ -52,7 +52,6 @@ const FeaturesSection = () => {
             </div>
             <h3 className={styles.featureTitle}>{feature.title}</h3>
             <p className={styles.featureDescription}>{feature.description}</p>
-            <Link to={`/blog/${feature.blogSlug}`} className={styles.learnMore}>Learn More &rarr;</Link>
           </div>
         ))}
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './OfferingsSection.module.css';
 
 // 1. Import all your images. This is the correct Vite pattern.
@@ -11,43 +12,50 @@ import insuranceImage from '../assets/insurance-image.png';
 import debankingImage from '../assets/debanking-image.png';   
 
 
+
 // 2. Use the imported variables in your data array.
 const offeringsData = [
   {
     title: 'AI Thermograph',
     description: 'Our core hardware detects contamination, proactively alerts you to potential claims, and monitors for phytosanitary issues in real-time.',
     image: thermographImage, // Use the variable, not a string path
-    imageAlt: 'LoadGuard AI Thermograph device'
+    imageAlt: 'LoadGuard AI Thermograph device',
+    blogSlug: 'power-of-real-time-monitoring'
   },
   {
     title: 'BASC/CTPAT Compliance',
     description: 'A professional service for achieving and maintaining BASC/CTPAT certification. This service is offered free of charge to all our hardware customers.',
     image: complianceImage,
-    imageAlt: 'CTPAT and BASC logos'
+    imageAlt: 'CTPAT and BASC logos',
+    blogSlug: 'navigating-ctpat-and-basc'
   },
   {
     title: 'Reputation Management',
     description: 'We shield your business from defamatory claims by monitoring media, issuing content removal requests, and publishing on your behalf to certify your compliance.',
     image: reputationImage,
-    imageAlt: 'Shield protecting a brand logo'
+    imageAlt: 'Shield protecting a brand logo',
+    blogSlug: 'contamination-threat-beyond-spoilage'
   },
   {
     title: 'Legal & Authority Coordination',
     description: 'In the event of contamination, we coordinate with your legal team, international lawyers, and government authorities to evidence your due diligence and organize your case.',
     image: legalImage,
-    imageAlt: 'Gavel and documents'
+    imageAlt: 'Gavel and documents',
+    blogSlug: 'unbreakable-chain-traceability'
   },
   {
     title: 'Insurance',
     description: 'Coordinates with insurance providers to get you insurance in the case of claims, contaminations, and other phytosanitary compliance events.',
     image: insuranceImage,
-    imageAlt: 'Insurance policy document'
+    imageAlt: 'Insurance policy document',
+    blogSlug: 'hidden-costs-of-contamination'
   },
    {
     title: 'Debanking Strategy',
     description: 'We protect your ability to transact by helping you diversify your banking infrastructure, including setting up secure DeFi payment rails with your supply chain partners.',
     image: debankingImage,
-    imageAlt: 'Network of financial icons'
+    imageAlt: 'Network of financial icons',
+    blogSlug: 'mastering-ripening-long-haul'
   }
 ];
 
@@ -64,7 +72,7 @@ const OfferingsSection = () => {
             <div className={styles.textContainer}>
               <h3 className={styles.offeringTitle}>{offering.title}</h3>
               <p className={styles.offeringDescription}>{offering.description}</p>
-              <a href="#" className={styles.learnMoreLink}>Learn More &rarr;</a>
+              <Link to={`/blog/${offering.blogSlug}`} className={styles.learnMoreLink}>Learn More &rarr;</Link>
             </div>
             <div className={styles.imageContainer}>
               {/* EDITED: Added the className to the img tag */}
