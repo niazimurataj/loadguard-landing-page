@@ -60,5 +60,29 @@ export const blogPosts = [
     imageUrl: placeholder1,
     date: 'July 16, 2025',
   },
+  {
+    id: 8,
+    category: 'Market Access & Compliance',
+    title: 'EU Phytosanitary Hurdles: How Ecuadorean Exporters Can Guarantee Clean Shipments',
+    summary: 'A practical guide to meeting strict EU regulations. Learn how proactive VOC and ethylene monitoring can prevent costly rejections and delays at ports like Rotterdam and Hamburg.',
+    imageUrl: placeholder2,
+    date: 'July 18, 2025',
+  },
+  {
+    id: 9,
+    category: 'Security & Risk Management',
+    title: '"Contamination": The Threat Beyond Spoilage for Ecuadorean Bananas',
+    summary: 'Narcotrafficking is a top risk for exporters. We break down how real-time alerts and an immutable chain of custody can protect your containers, your reputation, and your BASC certification.',
+    imageUrl: placeholder1,
+    date: 'July 20, 2025',
+  },
+  {
+    id: 10,
+    category: 'Quality & Profitability',
+    title: 'From Guayaquil to St. Petersburg: Mastering Ripening on Long-Haul Voyages',
+    summary: 'Every day at sea impacts your bottom line. Discover the science of ethylene control and precise temperature management to deliver perfectly yellow bananas and minimize quality claims.',
+    imageUrl: placeholder3,
+    date: 'July 22, 2025',
+  },
   // Add more blog posts here
 ];
