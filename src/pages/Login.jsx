@@ -50,6 +50,9 @@ const errorStyles = {
   textAlign: "center",
 };
 
+// TODO: hook this up to AWS Cognito
+// TODO: add log in with Google 
+
 export default function Login() {
   const [form, setForm] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
