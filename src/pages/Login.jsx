@@ -50,6 +50,29 @@ const errorStyles = {
   textAlign: "center",
 };
 
+
+// Add AWS authentication here
+/*
+import { Amplify } from 'aws-amplify';
+
+Amplify.configure({
+  Auth: {
+    Cognito: {
+      userPoolId: 'YOUR_USER_POOL_ID',
+      userPoolClientId: 'YOUR_USER_POOL_CLIENT_ID',
+      loginWith: { // Optional
+        oauth: {
+          domain: 'YOUR_COGNITO_DOMAIN',
+          scopes: ['email', 'profile', 'openid', 'aws.cognito.signin.user.admin'],
+          redirectSignIn: ['http://localhost:3000/'],
+          redirectSignOut: ['http://localhost:3000/login/'],
+          responseType: 'code'
+        }
+      }
+    }
+  }
+});
+*/
 // TODO: hook this up to AWS Cognito
 // TODO: add log in with Google 
 
