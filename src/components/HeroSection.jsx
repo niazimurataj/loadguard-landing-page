@@ -2,6 +2,7 @@ import React from 'react';
 // 1. Import the CSS module file.
 // The 'styles' object will contain all the class names from your CSS file.
 import styles from './HeroSection.module.css';
+import heroImage from '../assets/loadguard-hero-section.png';
 
 // You can import assets like images directly.
 // import heroImage from '../assets/loadguard-hero-section.png';

@@ -10,7 +10,8 @@ import Footer from './components/Footer';
 import BlogPage from './pages/BlogPage';
 import LoginPage from './pages/Login';
 import SinglePostPage from './pages/SinglePostPage';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import MembersPage from './pages/MembersPage';
+
 
 export default function App() {
   const appContainerStyle = {
@@ -38,6 +39,7 @@ export default function App() {
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<SinglePostPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/members" element={<MembersPage />} />
           </Routes>
         </main>
         <Footer />

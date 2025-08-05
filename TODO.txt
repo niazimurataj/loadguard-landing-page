@@ -5,8 +5,16 @@ than general temperature logging
 [] Move the legal services, PR monitoring etc to the solutions software tab - and replace in home page
 with general "Agentic Services"
 
+[] Create members area 
+  [] Set up authentication back end 
+  [] Tie authentication to table (Akshay lambda, DynamoDB) 
+  [] Create members area front end 
+    [] Create multiple tabs wrapper 
+      [] map tab: {mapbox component <plot coords from AWS>, table of deployed devices compoent}
+      [] agentic situation room (chatbot ui - should show list of articles from jupyter notebook)
+
 [] About us page
-   [] ChatGPT our faces into professional looking headshots; fill out about us section
+   [] Midjourney our faces into professional looking headshots; fill out about us section
    [] add "places where we've worked", copy trusted-by greyover effect
    [] add linkedin profiles and x profile sunderneath each bio
    [] write bios
@@ -42,3 +50,51 @@ with general "Agentic Services"
 [] remove Vite + React logo and tab show and replace w/ loadguard logo and tab name 
 
   
+
+
+
+  import React from "react";
+import { Authenticator } from "@aws-amplify/ui-react";
+
+export default function Login() {
+  return (
+    <div style={{
+      display: "flex",
+      justifyContent: "center",
+      marginTop: "2rem"
+    }}>
+      <Authenticator
+        formFields={{
+          signUp: {
+            email: {
+              label: "Email Address",
+              placeholder: "Enter your email address",
+              isRequired: true,
+              order: 1,
+            },
+            name: {
+              label: "Full Name",
+              placeholder: "Enter your full name",
+              isRequired: true,
+              order: 2,
+            },
+            phone_number: {
+              label: "Phone Number",
+              placeholder: "+1xxxxxxxxxx",
+              isRequired: true,   // or false, depending on your Cognito settings
+              order: 3,
+            },
+            // Optionally: password, confirm_password
+          }
+        }}
+      >
+        {({ signOut, user }) => (
+          <div>
+            <h2>Welcome, {user && user.attributes && user.attributes.email}</h2>
+            <button onClick={signOut}>Sign Out</button>
+          </div>
+        )}
+      </Authenticator>
+    </div>
+  );
+}
