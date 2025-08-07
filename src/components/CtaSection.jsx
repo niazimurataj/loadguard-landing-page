@@ -14,8 +14,8 @@ const CtaSection = () => {
           Bring your current thermograph contract - LoadGuard is the same price.
         </h3>
         <div className={styles.buttonGroup}>
-          <button className={styles.primaryButton}>Start Your Pilot</button>
-          <button className={styles.secondaryButton}>Speak to an Expert</button>
+          <button className={styles.primaryButton} onClick={() => window.location.href = '/pilot'}>Start Your Pilot</button>
+          <button className={styles.secondaryButton} onClick={() => window.location.href = '/contact'}>Speak to an Expert</button>
         </div>
       </div>
     </section>

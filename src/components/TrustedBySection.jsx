@@ -2,6 +2,7 @@
 // This component provides social proof by displaying logos of clients or partners.
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 import styles from './TrustedBySection.module.css';
 
 // 1. Import each logo as a module.
@@ -82,9 +83,9 @@ const TrustedBySection = () => {
       <br />
       <br />
         <div className={styles.buttonContainer} style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-            <button className={styles.secondaryButton}>
+            <Link to="/blog/customer-stories" className={styles.secondaryButton}>
                 Read their Stories
-            </button>
+            </Link>
         </div>
       
     </section>

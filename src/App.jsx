@@ -11,6 +11,7 @@ import BlogPage from './pages/BlogPage';
 import LoginPage from './pages/Login';
 import SinglePostPage from './pages/SinglePostPage';
 import MembersPage from './pages/MembersPage';
+import PilotRequestPage from './pages/PilotRequestPage';
 
 
 export default function App() {
@@ -40,6 +41,7 @@ export default function App() {
             <Route path="/blog/:slug" element={<SinglePostPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/members" element={<MembersPage />} />
+            <Route path="/pilot" element={<PilotRequestPage />} />
           </Routes>
         </main>
         <Footer />

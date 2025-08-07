@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './OurTeam.module.css';
+import niazi from '../assets/niazi.jpg';
+import akshay from '../assets/akshay.png';
 
 const teamMembers = [
-  { name: 'John Doe', role: 'CEO' },
-  { name: 'Jane Smith', role: 'CTO' },
-  { name: 'Peter Jones', role: 'Lead Engineer' },
+  { name: 'Niazi Murataj', role: 'CEO', image: niazi },
+  { name: 'Akshay Hanumegowda', role: 'CTO', image: akshay },
 ];
 
 const OurTeam = () => {
@@ -16,7 +17,9 @@ const OurTeam = () => {
       <div className={styles.teamGrid}>
         {teamMembers.map((member, index) => (
           <div key={index} className={styles.teamMember}>
-            <div className={styles.placeholderImage}></div>
+            <div>
+              <img className={styles.placeholderImage} src={member.image} alt={member.name} />
+            </div>
             <h3 className={styles.name}>{member.name}</h3>
             <p className={styles.role}>{member.role}</p>
           </div>

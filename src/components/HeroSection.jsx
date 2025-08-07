@@ -2,7 +2,7 @@ import React from 'react';
 // 1. Import the CSS module file.
 // The 'styles' object will contain all the class names from your CSS file.
 import styles from './HeroSection.module.css';
-import heroImage from '../assets/loadguard-hero-section.png';
+import { Link } from 'react-router-dom';
 
 // You can import assets like images directly.
 // import heroImage from '../assets/loadguard-hero-section.png';
@@ -23,9 +23,9 @@ const HeroSection = () => {
           <p className={styles.heroDescription}>
             LoadGuard is a platform that alerts you when your reefers are in claim condition or are contaminated, Get the data you need to avoid paying for claims you're not responsible for and protect your business from contamination penalties.
           </p>
-          <button className={styles.ctaButton}>
+          <Link to="/pilot" className={styles.ctaButton}>
             Request a Pilot
-          </button>
+          </Link>
         </div>
 
       </div>

@@ -1,17 +1,26 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
+import LoadingScreen from "../components/LoadingScreen"; // Import the LoadingScreen component
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // Add a loading state
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Since we accept any username and password, we can just navigate to the members page.
-    navigate("/members");
+    setIsLoading(true); // Show the loading screen
+    // Since we accept any username and password, we can just navigate to the members page after a delay.
+    setTimeout(() => {
+      navigate("/members");
+    }, 6000); // 6 seconds to match the loading screen duration
   };
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <div className={styles.loginContainer}>

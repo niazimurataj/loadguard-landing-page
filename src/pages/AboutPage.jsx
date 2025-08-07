@@ -11,8 +11,8 @@ const AboutPage = () => {
   return (
     <div>
       <AboutHero />
-      <OurMission />
       <OurTeam />
+      <OurMission />
       <OurValues />
       <CompanyTimeline />
       <CtaSection />

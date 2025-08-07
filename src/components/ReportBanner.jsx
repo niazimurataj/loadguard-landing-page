@@ -4,7 +4,7 @@ import styles from './ReportBanner.module.css';
 const ReportBanner = () => {
   return (
     <div className={styles.banner}>
-      <p className={styles.text}>Read the 2025 State of Banana Container Contaminations, Claims, and Phytosanitary Incidents</p>
+      <p className={styles.text}>Get the 2025 Report on the State of Banana Container Security</p>
       <button className={styles.ctaButton}>
         <span className={styles.text}>Download</span>
       </button>

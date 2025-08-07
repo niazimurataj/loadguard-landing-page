@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 import styles from './AdversaryUniverseSection.module.css';
 
 // Import your custom graphic for this section
@@ -17,9 +18,9 @@ const AdversaryUniverseSection = () => {
           <p className={styles.description}>
             Adversaries are operating with unprecedented stealth, from corrupt officials to organized crime. Today's threats require more than just temperature logs. Discover the adversaries targeting your supply chain.
           </p>
-          <button className={styles.ctaButton}>
+          <Link to="/blog/adversary-universe" className={styles.ctaButton}>
             Explore Adversary Universe
-          </button>
+          </Link>
         </div>
 
         {/* Right Column: Image */}

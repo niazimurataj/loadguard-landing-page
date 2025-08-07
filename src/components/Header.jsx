@@ -35,6 +35,7 @@ const Header = () => {
       color: 'white',
       border: 'none',
       padding: '0.75rem 1.5rem',
+      marginRight: '0.5rem',
       borderRadius: '0.5rem',
       cursor: 'pointer',
       fontWeight: 'bold',
@@ -77,7 +78,7 @@ const Header = () => {
         </nav>
         <div>
           <Link to="/contact" style={{...navLinkStyle, marginRight: '1rem'}}>Contact Us</Link>
-          <Link to="/contact" style={ctaButtonStyle}>Request a Pilot</Link>
+          <Link to="/pilot" style={ctaButtonStyle}>Request a Pilot</Link>
           <Link to="/login" style={{
               ...ctaButtonStyle,
               marginRight: '1rem',

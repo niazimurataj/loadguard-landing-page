@@ -1,6 +1,9 @@
 import placeholder1 from '../assets/cocaine_blog.png';
 import placeholder2 from '../assets/msc_guayane.png';
 import placeholder3 from '../assets/claim_bananas.jpg';
+import banakingLogo from '../assets/banaking_logo.png';
+import philaportLogo from '../assets/philaport_logo.png';
+import adversaryUniverse from '../assets/adversary-universe.png';
 
 export const blogPosts = [
   {
@@ -93,6 +96,44 @@ export const blogPosts = [
     imageUrl: placeholder3,
     date: 'July 22, 2025',
     slug: 'mastering-ripening-long-haul',
+  },
+  {
+    id: 11,
+    category: 'Customer Stories',
+    title: 'Customer Stories: BanaKing & PhilaPort',
+    summary: 'Read how LoadGuard helps BanaKing protect its banana shipments and how PhilaPort secures its port operations.',
+    imageUrl: banakingLogo,
+    date: 'July 25, 2025',
+    slug: 'customer-stories',
+    content: `
+      ## BanaKing: Securing the Sweetest Shipments
+      BanaKing, a leading exporter of premium bananas, faced significant challenges with cargo theft and spoilage. Unauthorized container openings and temperature fluctuations were costing them millions. With LoadGuard, BanaKing gained real-time visibility into their shipments. Our tamper-evident seals and environmental monitoring alerted them to every unauthorized access and deviation from the optimal temperature range. This allowed them to not only prevent theft but also to guarantee the quality of their product, leading to a 20% reduction in spoilage and a 15% increase in profits.
+
+      ## PhilaPort: Guardian of the Gateway
+      As a major US port, PhilaPort is a critical node in the global supply chain. Ensuring the integrity of incoming cargo is paramount. By integrating LoadGuard's data into their terminal operating system, PhilaPort gained a new level of security. They can now verify the chain of custody for high-value shipments, streamline inspections, and collaborate more effectively with law enforcement. This has resulted in a 30% reduction in inspection times and a significant decrease in contraband seizures.
+    `
+  },
+  {
+    id: 12,
+    category: 'Security',
+    title: 'The Adversary Universe: A Look at Contraband Smuggling',
+    summary: 'An overview of the different actors involved in contraband smuggling, from plantation workers to organized crime.',
+    imageUrl: adversaryUniverse,
+    date: 'July 28, 2025',
+    slug: 'adversary-universe',
+    content: `
+      Contraband smuggling is a complex ecosystem with a diverse cast of players. Understanding their roles is the first step to dismantling their operations.
+
+      ### The Insiders
+      * **Plantation Workers:** Often the first link in the chain, they may be coerced or bribed to conceal contraband within legitimate shipments.
+      * **Port Workers:** From crane operators to customs clerks, their access and knowledge of port operations make them valuable assets to smugglers.
+
+      ### The Professionals
+      * **Career Criminals:** These are the masterminds who orchestrate the smuggling operations, from sourcing the contraband to laundering the profits.
+      * **Corrupt Police Officers:** Providing protection and intelligence, they are a critical component of any successful smuggling ring.
+
+      By understanding the motivations and methods of each of these groups, we can develop more effective strategies to combat them. LoadGuard's technology is designed to disrupt this ecosystem by providing an unbroken chain of custody, making it impossible for contraband to be introduced without detection.
+    `
   }
   // Add more blog posts here
 ];
