@@ -20,12 +20,12 @@ const HardwareSolutionHero = () => {
             {/* Right Column: Text Content */}
             <div className={styles.textContainer}>
             <h1 className={styles.title}>
-                Our Solutions Help You Keep Your Margin
+                A digital nose for each container
             </h1>
             <p className={styles.description}>
                 Discover how LoadGuard's advanced thermograph and real-time AI monitoring prevent contamination and reduce claims.
             </p>
-            <button className={styles.ctaButton}>
+            <button className={styles.ctaButton} onClick={() => window.location.href = '/pilot'}>
                 Request a Demo
             </button>
             </div>

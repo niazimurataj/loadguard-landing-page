@@ -8,7 +8,7 @@ const ContractBanner = () => {
       <p className={styles.subtitle}>
         Bring us your current contract from <strong>Sensitech, Emerson, Controlant, ORBCOMM,</strong> or any other data logger provider. We'll match their price and deliver more comprehensive, real-time alerting.
       </p>
-      <button className={styles.ctaButton}>
+      <button className={styles.ctaButton} onClick={() => window.location.href = '/pilot'}>
         <span className={styles.text}>Get a better deal</span>
       </button>
     </div>
