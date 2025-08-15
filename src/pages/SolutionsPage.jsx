@@ -68,15 +68,17 @@ const cardVariants = {
 
 const SolutionsPage = () => {
   const location = useLocation();
-  const [activeSolution, setActiveSolution] = useState(
-    location.state?.activeTab || 'hardware'
-  );
+  // Directly use the state from the location, defaulting to 'hardware'.
+  // This is simpler and more reliable than using useState and useEffect here.
+  const activeSolution = location.state?.activeTab || 'hardware';
 
+  // State for handling the button clicks, which is a separate concern.
+  const [currentTab, setCurrentTab] = useState(activeSolution);
+
+  // If the user navigates between tabs using browser back/forward, update the view.
   useEffect(() => {
-    if (location.state?.activeTab) {
-      setActiveSolution(location.state.activeTab);
-    }
-  }, [location.state?.activeTab]);
+    setCurrentTab(activeSolution);
+  }, [activeSolution]);
 
   return (
     <div className={`${styles.solutionsPage} gradient-background`}>
@@ -85,18 +87,18 @@ const SolutionsPage = () => {
           <motion.div
             className={styles.activeBg}
             initial={false}
-            animate={{ x: activeSolution === 'hardware' ? 0 : '100%' }}
+            animate={{ x: currentTab === 'hardware' ? 0 : '100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           />
           <button 
             className={styles.toggleButton}
-            onClick={() => setActiveSolution('hardware')}
+            onClick={() => setCurrentTab('hardware')}
           >
             Hardware
           </button>
           <button 
             className={styles.toggleButton}
-            onClick={() => setActiveSolution('software')}
+            onClick={() => setCurrentTab('software')}
           >
             Software
           </button>
@@ -104,7 +106,7 @@ const SolutionsPage = () => {
       </div>
         <h1 className={styles.mainHeader}>Supply Chain Technology Tailored for Banana Exporters and Importers</h1>
 
-      {activeSolution === 'hardware' ? (
+      {currentTab === 'hardware' ? (
         <>
           <HardwareSolutionHero />
           <FeatureSolutionSection />
