@@ -11,14 +11,14 @@ const offeringsData = [
     description: 'Our core hardware detects contamination, proactively alerts you to potential claims, and monitors for phytosanitary issues in real-time.',
     image: thermographImage,
     imageAlt: 'LoadGuard AI Thermograph device',
-    linkTo: { pathname: "/solutions", state: { activeTab: "hardware" } }
+    linkTo: "/solutions?tab=hardware"
   },
   {
     title: 'Agentic Software Services',
     description: 'Our suite of software services, including reputation management, legal coordination, and debanking strategy, to protect your business.',
     image: reputationImage,
     imageAlt: 'Software services icon',
-    linkTo: { pathname: "/solutions", state: { activeTab: "software" } }
+    linkTo: "/solutions?tab=software"
   }
 ];
 

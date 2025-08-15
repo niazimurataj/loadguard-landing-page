@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import styles from './SolutionsPage.module.css';
 import offeringsStyles from '../components/OfferingsSection.module.css';
@@ -67,18 +67,12 @@ const cardVariants = {
 };
 
 const SolutionsPage = () => {
-  const location = useLocation();
-  // Directly use the state from the location, defaulting to 'hardware'.
-  // This is simpler and more reliable than using useState and useEffect here.
-  const activeSolution = location.state?.activeTab || 'hardware';
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeSolution = searchParams.get('tab') || 'hardware';
 
-  // State for handling the button clicks, which is a separate concern.
-  const [currentTab, setCurrentTab] = useState(activeSolution);
-
-  // If the user navigates between tabs using browser back/forward, update the view.
-  useEffect(() => {
-    setCurrentTab(activeSolution);
-  }, [activeSolution]);
+  const handleTabChange = (tab) => {
+    setSearchParams({ tab });
+  };
 
   return (
     <div className={`${styles.solutionsPage} gradient-background`}>
@@ -87,18 +81,18 @@ const SolutionsPage = () => {
           <motion.div
             className={styles.activeBg}
             initial={false}
-            animate={{ x: currentTab === 'hardware' ? 0 : '100%' }}
+            animate={{ x: activeSolution === 'hardware' ? 0 : '100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           />
           <button 
             className={styles.toggleButton}
-            onClick={() => setCurrentTab('hardware')}
+            onClick={() => handleTabChange('hardware')}
           >
             Hardware
           </button>
           <button 
             className={styles.toggleButton}
-            onClick={() => setCurrentTab('software')}
+            onClick={() => handleTabChange('software')}
           >
             Software
           </button>
@@ -106,7 +100,7 @@ const SolutionsPage = () => {
       </div>
         <h1 className={styles.mainHeader}>Supply Chain Technology Tailored for Banana Exporters and Importers</h1>
 
-      {currentTab === 'hardware' ? (
+      {activeSolution === 'hardware' ? (
         <>
           <HardwareSolutionHero />
           <FeatureSolutionSection />

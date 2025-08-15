@@ -15,7 +15,7 @@ export default async function handler(req, res) {
       const formattedKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase());
       return `${formattedKey}: ${value}`;
     })
-    .join('\n');
+    .join('');
 
   // Create a transporter object using SMTP transport
   // You must configure these environment variables in your Vercel project settings
