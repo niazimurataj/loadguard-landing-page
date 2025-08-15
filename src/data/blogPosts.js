@@ -574,8 +574,9 @@ To counter this adversary universe, defense must be layered, adaptive, and merci
 
 ---
 
-The adversary universe thrives on **your belief that “it won’t happen here.”** But it will—and when it does, you won’t be dealing with paperwork. You’ll be staring down an ecosystem that knows your vulnerabilities better than you do, and has no hesitation exploiting them with precision, patience, and, if necessary, violence.
+These adversaries thrive on **your belief that “it won’t happen here.”** But it will—and when it does, you won’t be dealing with paperwork. You’ll be staring down an ecosystem that knows your vulnerabilities better than you do, and has no hesitation exploiting them with precision, patience, and, if necessary, violence.
 
+Refuse to be their prey. Equip your supply chain with the tools to outsmart, outmaneuver, and outlast the adversary universe.
      `
   }
 ];

@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Confetti from 'react-confetti';
 import logo from '../assets/lg-logo.png';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Header = () => {
     const [showConfetti, setShowConfetti] = useState(false);
+    const { theme } = useContext(ThemeContext);
 
     const handleConfettiClick = () => {
         setShowConfetti(true);
@@ -16,8 +18,11 @@ const Header = () => {
       justifyContent: 'space-between',
       alignItems: 'center',
       padding: '1rem 2rem',
-      borderBottom: '1px solid #E5E7EB',
-      backgroundColor: 'white',
+      borderBottom: theme === 'light' ? '1px solid #E5E7EB' : '1px solid #374151',
+      backgroundColor: theme === 'light' ? 'white' : '#111827',
+      position: 'relative',
+      zIndex: 1,
+      transition: 'background-color 0.5s, border-bottom 0.5s',
     };
   
     const logoStyle = {
@@ -34,8 +39,9 @@ const Header = () => {
     
     const navLinkStyle = {
         textDecoration: 'none',
-        color: '#4B5563',
+        color: theme === 'light' ? '#4B5563' : '#D1D5DB',
         fontSize: '1rem',
+        transition: 'color 0.5s',
     };
   
     const ctaButtonStyle = {
