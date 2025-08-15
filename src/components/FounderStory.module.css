@@ -1,14 +1,61 @@
+@keyframes panBackground {
+    0% { 
+      background-position: 0% 0%;
+      transform: scale(1) rotate(0deg);
+    }
+    25% {
+      background-position: 100px 50px;
+      transform: scale(1.05) rotate(1deg);
+    }
+    50% {
+      background-position: 200px 100px;
+      transform: scale(1.1) rotate(0deg);
+    }
+    75% {
+      background-position: 150px 200px;
+      transform: scale(1.05) rotate(-1deg);
+    }
+    100% { 
+      background-position: 0% 0%;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
 .section {
   padding: 6rem 2rem;
-  background-color: #FFFFFF;
+  background-color: #111827;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3e%3cdefs%3e%3cpattern id='grid' width='50' height='50' patternUnits='userSpaceOnUse'%3e%3cpath d='M 50 0 L 0 0 0 50' fill='none' stroke='%233B82F6' stroke-width='0.3'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='300' height='300' fill='url(%23grid)'/%3e%3cpath fill='none' stroke='%233B82F6' stroke-width='0.4' d='M 150 0 L 150 300 M 0 150 L 300 150 M 75 0 L 225 300 M 225 0 L 75 300 M 0 75 L 300 225 M 0 225 L 300 75 M 50 0 L 250 300 M 250 0 L 50 300 M 0 50 L 300 250 M 0 250 L 300 50'/%3e%3ccircle cx='150' cy='150' r='40' fill='none' stroke='%233B82F6' stroke-width='0.6'/%3e%3ccircle cx='150' cy='150' r='20' fill='none' stroke='%233B82F6' stroke-width='0.8'/%3e%3cpolygon points='150,50 200,100 150,150 100,100' fill='none' stroke='%233B82F6' stroke-width='0.5'/%3e%3cpolygon points='150,150 200,200 150,250 100,200' fill='none' stroke='%233B82F6' stroke-width='0.5'/%3e%3cpolygon points='100,100 150,150 200,100 150,50' fill='none' stroke='%233B82F6' stroke-width='0.5'/%3e%3cpolygon points='100,200 150,250 200,200 150,150' fill='none' stroke='%233B82F6' stroke-width='0.5'/%3e%3c/svg%3e");
+    animation: panBackground 35s linear infinite;
+}
+
+.glassContainer {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 3rem;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
-  max-width: 1200px;
-  margin: 0 auto;
   align-items: center;
 }
 
@@ -19,20 +66,46 @@
 .title {
   font-size: 3rem;
   font-weight: 800;
-  color: #111827;
+  color: #FFFFFF;
   margin-bottom: 2rem;
   line-height: 1.2;
 }
 
 .storyText {
   font-size: 1.1rem;
-  color: #374151;
+  color: #D1D5DB;
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
 
 .storyText strong {
-  color: #1E40AF;
+  color: #60A5FA;
+}
+
+.founderInfo {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.founderImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.founderName {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.founderTitle {
+    font-size: 1rem;
+    color: #9CA3AF;
 }
 
 .imageContainer {
@@ -104,7 +177,6 @@
   height: 20px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 992px) {
   .container {
     grid-template-columns: 1fr;

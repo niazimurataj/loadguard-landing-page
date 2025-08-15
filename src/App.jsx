@@ -13,6 +13,7 @@ import SinglePostPage from './pages/SinglePostPage';
 import MembersPage from './pages/MembersPage';
 import PilotRequestPage from './pages/PilotRequestPage';
 import { Toaster } from "@/components/ui/sonner";
+import AdversaryUniversePage from './pages/AdversaryUniversePage';
 
 
 export default function App() {
@@ -39,6 +40,7 @@ export default function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/adversary-universe" element={<AdversaryUniversePage />} />
             <Route path="/blog/:slug" element={<SinglePostPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/members" element={<MembersPage />} />

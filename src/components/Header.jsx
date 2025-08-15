@@ -8,7 +8,7 @@ const Header = () => {
 
     const handleConfettiClick = () => {
         setShowConfetti(true);
-        setTimeout(() => setShowConfetti(false), 3000);
+        setTimeout(() => setShowConfetti(false), 5000);
     };
 
     const headerStyle = {

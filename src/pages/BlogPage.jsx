@@ -16,7 +16,7 @@ const BlogPage = () => {
           <h1>LoadGuard Insights</h1>
           <p>The latest analysis on supply chain security, technology, and compliance.</p>
         </header>
-        <ReportBanner />
+        {/* <ReportBanner /> */}
         {/* Featured Post Section */}
         {featuredPost && (
           <section className={styles.featuredSection}>

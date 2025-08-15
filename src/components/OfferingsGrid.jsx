@@ -41,7 +41,7 @@ const OfferingsGrid = () => {
               {category.items.map((item) => (
                 <li key={item.name} className={styles.item}>
                   <div className={styles.itemIcon}>{item.icon}</div>
-                  <a href="" className={styles.itemLink}>{item.name}</a>
+                  <span className={styles.itemLink}>{item.name}</span>
                 </li>
               ))}
             </ul>
