@@ -1,0 +1,64 @@
+.heroContainer {
+    display: flex;
+    background-color: #0B111E;
+    color: #fff;
+    padding: 4rem 2rem;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .textContainer {
+    flex: 1;
+    padding-right: 2rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #a0aec0;
+  }
+  
+  .mapContainer {
+    flex: 2;
+    height: 600px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  
+  .loadingState, .errorState {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a202c;
+    font-size: 1.2rem;
+  }
+  
+  .tooltipContent {
+    background-color: #1A202C;
+    color: #E2E8F0;
+    border-color: #2D3748;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  
+  .tooltipContent h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #2D3748;
+    padding-bottom: 0.5rem;
+  }
+  
+  .tooltipContent p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+  }

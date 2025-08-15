@@ -6,7 +6,9 @@ const OurMission = () => {
     <section className={styles.section}>
       <div className={styles.content}>
         <h2 className={styles.title}>Our Mission</h2>
-        <p className={styles.text}>Our mission is to provide the most advanced and reliable real-time monitoring solutions for the perishable goods industry. We are committed to helping our clients reduce waste, prevent claims, and ensure the quality of their products.</p>
+        <p className={styles.text}>
+          To restore trust in the global supply chain. We build resilient, transparent, and accessible monitoring technology that gives exporters the power to prove their diligence, protect their assets, and trade with confidence. We're making LoadGuard the global standard for trusted cargo.
+        </p>
       </div>
     </section>
   );

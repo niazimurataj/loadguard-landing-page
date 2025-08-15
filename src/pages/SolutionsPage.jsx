@@ -11,6 +11,7 @@ import CtaSection from '../components/CtaSection.jsx';
 import CircularSupplyChain from '../components/CircularSupplyChain.jsx';
 import InstallationGuide from '../components/InstallationGuide.jsx';
 import FAQ from '../components/FAQ.jsx';
+import PlantationIntelligenceHero from '../components/PlantationIntelligenceHero.jsx';
 
 import complianceImage from '../assets/compliance-image.png';
 import reputationImage from '../assets/reputation-image.png';
@@ -105,32 +106,34 @@ const SolutionsPage = () => {
           <CtaSection />
         </>
       ) : (
-        <div className={styles.softwareSection}>
-          <h2 className={styles.floatingHeader}>Features Coming Soon</h2>
-          <p>We're integrating information on plantation safety and quality with an agentic AI suite to give you a compliance and quality assurance back office without any of the cost!</p>
-          <motion.div 
-            className={`${offeringsStyles.offeringsList} ${styles.softwareOfferingsList}`}
-            initial="hidden"
-            animate="visible"
-          >
-            {softwareOfferingsData.map((offering, index) => (
-              <motion.div 
-                key={index} 
-                className={`${offeringsStyles.offeringItem} ${styles.softwareOfferingCard}`}
-                custom={index}
-                variants={cardVariants}
-                whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              >
-                <div className={offeringsStyles.textContainer}>
-                  <h3 className={offeringsStyles.offeringTitle}>{offering.title}</h3>
-                  <p className={offeringsStyles.offeringDescription}>{offering.description}</p>
-                </div>
-                <div className={offeringsStyles.imageContainer}>
-                  <img src={offering.image} alt={offering.imageAlt} className={offeringsStyles.offeringImage} /> 
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+        <div className={styles.softwareSectionWrapper}>
+          <PlantationIntelligenceHero />
+          <div className={styles.agenticServicesSection}>
+            <div className={styles.comingSoonSticker}>COMING SOON</div>
+            <h2 className={styles.agenticServicesHeader}>Agentic AI Services</h2>
+            <p className={styles.agenticServicesSubheading}>
+              We're integrating our plantation intelligence with an agentic AI suite to give you a compliance and quality assurance back office—without the overhead.
+            </p>
+            <div className={styles.softwareOfferingsList}>
+              {softwareOfferingsData.map((offering, index) => (
+                <motion.div 
+                  key={index} 
+                  className={`${offeringsStyles.offeringItem} ${styles.softwareOfferingCard}`}
+                  custom={index}
+                  variants={cardVariants}
+                  whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
+                >
+                  <div className={offeringsStyles.textContainer}>
+                    <h3 className={`${offeringsStyles.offeringTitle} ${styles.softwareOfferingTitle}`}>{offering.title}</h3>
+                    <p className={`${offeringsStyles.offeringDescription} ${styles.softwareOfferingDescription}`}>{offering.description}</p>
+                  </div>
+                  <div className={offeringsStyles.imageContainer}>
+                    <img src={offering.image} alt={offering.imageAlt} className={offeringsStyles.offeringImage} /> 
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
           <CtaSection />
         </div>
       )}

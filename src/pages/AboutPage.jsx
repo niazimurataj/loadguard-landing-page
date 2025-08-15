@@ -1,20 +1,15 @@
 import React from 'react';
-import AboutHero from '../components/AboutHero';
+import FounderStory from '../components/FounderStory';
 import OurMission from '../components/OurMission';
 import OurTeam from '../components/OurTeam';
 import CtaSection from '../components/CtaSection';
-import OurValues from '../components/OurValues';
-import CompanyTimeline from '../components/CompanyTimeline';
 
 const AboutPage = () => {
-    {/* TODO: add bios, photos, shareable story and etc */}
   return (
-    <div>
-      <AboutHero />
-      <OurTeam />
+    <div style={{backgroundColor: 'white'}}>
+      <FounderStory />
       <OurMission />
-      <OurValues />
-      <CompanyTimeline />
+      <OurTeam />
       <CtaSection />
     </div>
   );
