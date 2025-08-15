@@ -12,6 +12,7 @@ import CircularSupplyChain from '../components/CircularSupplyChain.jsx';
 import InstallationGuide from '../components/InstallationGuide.jsx';
 import FAQ from '../components/FAQ.jsx';
 import PlantationIntelligenceHero from '../components/PlantationIntelligenceHero.jsx';
+import SoftwareFeatureSection from '../components/SoftwareFeatureSection.jsx';
 
 import complianceImage from '../assets/compliance-image.png';
 import reputationImage from '../assets/reputation-image.png';
@@ -108,12 +109,9 @@ const SolutionsPage = () => {
       ) : (
         <div className={styles.softwareSectionWrapper}>
           <PlantationIntelligenceHero />
+          <SoftwareFeatureSection />
           <div className={styles.agenticServicesSection}>
             <div className={styles.comingSoonSticker}>COMING SOON</div>
-            <h2 className={styles.agenticServicesHeader}>Agentic AI Services</h2>
-            <p className={styles.agenticServicesSubheading}>
-              We're integrating our plantation intelligence with an agentic AI suite to give you a compliance and quality assurance back office—without the overhead.
-            </p>
             <div className={styles.softwareOfferingsList}>
               {softwareOfferingsData.map((offering, index) => (
                 <motion.div 

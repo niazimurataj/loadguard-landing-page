@@ -20,7 +20,7 @@ const HardwareSolutionHero = () => {
             {/* Right Column: Text Content */}
             <div className={styles.textContainer}>
             <h1 className={styles.title}>
-                A digital dog's nose in every container!
+                A digital dog's nose in every container
             </h1>
             <p className={styles.description}>
                 Discover how LoadGuard's advanced thermograph and real-time AI monitoring prevent contamination and reduce claims.

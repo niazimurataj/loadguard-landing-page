@@ -2,14 +2,13 @@
     display: flex;
     background-color: #0B111E;
     color: #fff;
-    padding: 4rem 2rem;
+    padding: 2rem;
     gap: 2rem;
     align-items: center;
   }
   
   .textContainer {
     flex: 1;
-    padding-right: 2rem;
   }
   
   .title {
