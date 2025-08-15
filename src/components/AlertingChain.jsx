@@ -1,5 +1,23 @@
 import React from 'react';
-import styles from './AlertingChain.module.css';
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 const AlertingChain = () => {
   // Placeholder data
@@ -8,53 +26,78 @@ const AlertingChain = () => {
     { id: 2, name: 'Akshay H', email: 'akshay@loadguard.io', phone: '551-470-8796' },
   ];
 
-  return (
-    <div className={styles.alertingChainContainer}>
-      <h2>Alerting Chain</h2>
-      <table className={styles.contactsTable}>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th colSpan="2">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {contacts.map((contact) => (
-            <tr key={contact.id}>
-              <td>{contact.name}</td>
-              <td>{contact.email}</td>
-              <td>{contact.phone}</td>
-              <td>
-                <button className={styles.editButton}>Edit</button>
-              </td>
-              <td>
-                <button className={styles.alertButton}>Alert</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+  const handleBlockedFeatureClick = (event) => {
+    if (event && event.preventDefault) {
+      event.preventDefault();
+    }
+    toast("This feature is blocked right now! Check back later");
+  };
 
-      <div className={styles.addContactFormContainer}>
-        <h3>Add a contact</h3>
-        <form className={styles.addContactForm}>
-          <div className={styles.formGroup}>
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required />
-          </div>
-          <button type="submit" className={styles.addButton}>Add Contact</button>
-        </form>
-      </div>
+  return (
+    <div className="space-y-8">
+      <Card>
+        <CardHeader>
+          <CardTitle>Alerting Chain</CardTitle>
+          <CardDescription>
+            Manage the contacts that will be notified in case of an alert.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Name</TableHead>
+                <TableHead>Email</TableHead>
+                <TableHead>Phone Number</TableHead>
+                <TableHead className="text-right">Actions</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {contacts.map((contact) => (
+                <TableRow key={contact.id}>
+                  <TableCell>{contact.name}</TableCell>
+                  <TableCell>{contact.email}</TableCell>
+                  <TableCell>{contact.phone}</TableCell>
+                  <TableCell className="text-right space-x-2">
+                    <Button variant="outline" size="sm" onClick={handleBlockedFeatureClick}>Edit</Button>
+                    <Button variant="destructive" size="sm" onClick={handleBlockedFeatureClick}>Alert</Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Add a new contact</CardTitle>
+          <CardDescription>
+            The new contact will be added to the alerting chain.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleBlockedFeatureClick}>
+            <div className="grid w-full items-center gap-4">
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="name">Name</Label>
+                <Input id="name" placeholder="Enter contact's name" />
+              </div>
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="email">Email</Label>
+                <Input id="email" type="email" placeholder="Enter contact's email" />
+              </div>
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="phone">Phone Number</Label>
+                <Input id="phone" type="tel" placeholder="Enter contact's phone number" />
+              </div>
+            </div>
+            <div className="flex justify-end mt-4">
+              <Button type="submit">Add Contact</Button>
+            </div>
+          </form>
+        </CardContent>
+      </Card>
     </div>
   );
 };

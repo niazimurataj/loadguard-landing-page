@@ -12,6 +12,7 @@ import LoginPage from './pages/Login';
 import SinglePostPage from './pages/SinglePostPage';
 import MembersPage from './pages/MembersPage';
 import PilotRequestPage from './pages/PilotRequestPage';
+import { Toaster } from "@/components/ui/sonner";
 
 
 export default function App() {
@@ -45,6 +46,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <Toaster />
       </div>
     </Router>
   );

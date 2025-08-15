@@ -1,13 +1,33 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from "sonner";
 import Chatbot from '../components/Chatbot';
 import AlertingChain from '../components/AlertingChain';
-import styles from './MembersPage.module.css';
-import { ComposableMap, Geographies, Geography, Marker, Line } from "react-simple-maps";
-import mapStyles from '../components/MapSection.module.css';
+import MembersMap from '../components/MembersMap';
 
-const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
 
-const markers = [
+const initialMarkers = [
   { name: "Container 1", coordinates: [-75.1652, 39.9526] },
   { name: "Container 2", coordinates: [-122.3321, 47.6062] },
   { name: "Container 3", coordinates: [-79.8899, -2.1710] },
@@ -19,52 +39,13 @@ const routes = [
     { from: "Container 3", to: "Container 1" }
 ];
 
-const highlightedCountries = ["USA", "ECU", "ALB"];
-
-const MemberMap = () => {
-  return (
-    <section className={mapStyles.mapSection}>
-      <h2 className={mapStyles.sectionTitle}>Track your 4 containers</h2>
-      <div className={mapStyles.mapContainer}>
-        <div className={mapStyles.mapWrapper}>
-            <ComposableMap projectionConfig={{ scale: 160 }}>
-              <Geographies geography={geoUrl}>
-                {({ geographies }) =>
-                  geographies.map((geo) => {
-                    const isHighlighted = highlightedCountries.includes(geo.properties.iso_a3);
-                    return (
-                      <Geography
-                        key={geo.rsmKey}
-                        geography={geo}
-                        className={isHighlighted ? mapStyles.highlightedCountry : mapStyles.country}
-                      />
-                    );
-                  })
-                }
-              </Geographies>
-              {routes.map((route, i) => {
-                  const fromMarker = markers.find(m => m.name === route.from);
-                  const toMarker = markers.find(m => m.name === route.to);
-                  return (
-                      <Line
-                          key={`line-${i}`}
-                          from={fromMarker.coordinates}
-                          to={toMarker.coordinates}
-                          className={mapStyles.routeLine}
-                      />
-                  );
-              })}
-              {markers.map(({ name, coordinates }) => (
-                <Marker key={name} coordinates={coordinates}>
-                  <circle r={4} className={mapStyles.markerDot} />
-                </Marker>
-              ))}
-            </ComposableMap>
-        </div>
-      </div>
-    </section>
-  );
-};
+const googleMapsMarkers = initialMarkers.map(marker => ({
+  name: marker.name,
+  position: {
+    lat: marker.coordinates[1],
+    lng: marker.coordinates[0]
+  }
+}));
 
 const DataTable = () => {
   const initialData = [
@@ -85,84 +66,100 @@ const DataTable = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleBlockedFeatureClick = () => {
+    toast("This feature is blocked right now! Check back later");
+  };
+
   return (
-    <div className={styles.tableContainer}>
-      <table className={styles.dataTable}>
-        <thead>
-          <tr>
-            <th>Device ID</th>
-            <th>Motion</th>
-            <th>Temperature</th>
-            <th>Humidity</th>
-            <th>VOC Index</th>
-            <th>Spoilage</th>
-            <th>Illegal Access</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((row, index) => (
-            <tr key={index}>
-              <td>{row.deviceId}</td>
-              <td>{row.motion}</td>
-              <td>{row.temperature}°C</td>
-              <td>{row.humidity}%</td>
-              <td>{row.voc}</td>
-              <td>{row.spoilage}</td>
-              <td>{row.access}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className={styles.buttonContainer}>
-        <button className={styles.addButton}>Add device</button>
-      </div>
-    </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>Real-Time Container Status</CardTitle>
+        <CardDescription>Live sensor data from your active containers.</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Device ID</TableHead>
+              <TableHead>Motion</TableHead>
+              <TableHead>Temperature</TableHead>
+              <TableHead>Humidity</TableHead>
+              <TableHead>VOC Index</TableHead>
+              <TableHead>Spoilage</TableHead>
+              <TableHead>Illegal Access</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {data.map((row, index) => (
+              <TableRow key={index}>
+                <TableCell>{row.deviceId}</TableCell>
+                <TableCell>{row.motion}</TableCell>
+                <TableCell>{row.temperature}°C</TableCell>
+                <TableCell>{row.humidity}%</TableCell>
+                <TableCell>{row.voc}</TableCell>
+                <TableCell>{row.spoilage}</TableCell>
+                <TableCell>{row.access}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+        <div className="flex justify-end mt-4">
+          <Button onClick={handleBlockedFeatureClick}>Add device</Button>
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 
-
 const MembersPage = () => {
-  const [activeSection, setActiveSection] = useState('monitor');
-
   return (
-    <div className="gradient-background">
-      <h1 style={{textAlign: 'center', marginTop: '2rem'}}>Members Area</h1>
-      
-      <div style={{ textAlign: 'center' }}>
-        <div className={styles.toggleWrapper}>
-          <button 
-            className={`${styles.toggleButton} ${activeSection === 'monitor' ? styles.active : ''}`}
-            onClick={() => setActiveSection('monitor')}
-          >
-            Monitor
-          </button>
-          <button 
-            className={`${styles.toggleButton} ${activeSection === 'agent' ? styles.active : ''}`}
-            onClick={() => setActiveSection('agent')}
-          >
-            Agent
-          </button>
-          <button 
-            className={`${styles.toggleButton} ${activeSection === 'alerting' ? styles.active : ''}`}
-            onClick={() => setActiveSection('alerting')}
-          >
-            Alerting Chain
-          </button>
-        </div>
-      </div>
-
-      <div className={styles.separator} style={{ margin: '0px 0px 0px 0px' }}></div>
-
-      <div className={styles.content}>
-        {activeSection === 'monitor' && (
-          <div>
-            <MemberMap />
-            <DataTable />
+    <div className="container mx-auto p-4 md:p-8">
+      <h1 className="text-3xl font-bold tracking-tight mb-4">Members Dashboard</h1>
+      <Tabs defaultValue="monitor" className="w-full">
+        <TabsList>
+          <TabsTrigger value="monitor">Monitor</TabsTrigger>
+          <TabsTrigger value="agent">Agent</TabsTrigger>
+          <TabsTrigger value="alerting">Alerting Chain</TabsTrigger>
+        </TabsList>
+        <TabsContent value="monitor" className="mt-4">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
+            <Card className="col-span-4">
+              <CardHeader>
+                <CardTitle>Container Tracking</CardTitle>
+                <CardDescription>Live location of your 4 containers.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <MembersMap markers={googleMapsMarkers} routes={routes} />
+              </CardContent>
+            </Card>
+            <div className="col-span-4 lg:col-span-3">
+              <DataTable />
+            </div>
           </div>
-        )}
-        {activeSection === 'agent' && <Chatbot />}
-        {activeSection === 'alerting' && <AlertingChain />}
-      </div>
+        </TabsContent>
+        <TabsContent value="agent" className="mt-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>AI Agent</CardTitle>
+              <CardDescription>Chat with our AI to get insights and information.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Chatbot />
+            </CardContent>
+          </Card>
+        </TabsContent>
+        <TabsContent value="alerting" className="mt-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Alerting Chain</CardTitle>
+              <CardDescription>Configure your notification preferences.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <AlertingChain />
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 };

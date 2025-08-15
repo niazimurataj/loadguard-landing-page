@@ -32,3 +32,30 @@
   background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floatingHeader {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  animation: float 3s ease-in-out infinite;
+  color: white;
+}
+
+.softwareOfferingCard {
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
+}
