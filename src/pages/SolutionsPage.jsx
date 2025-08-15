@@ -21,13 +21,13 @@ import debankingImage from '../assets/debanking-image.png';
 const softwareOfferingsData = [
   {
     title: 'BASC/CTPAT Compliance',
-    description: 'A professional service for achieving and maintaining BASC/CTPAT certification. This service is offered free of charge to all our hardware customers.',
+    description: 'Use AI to maintain or achieve a BASC/CTPAT certification. This agentic service is offered free of charge to all our hardware customers.',
     image: complianceImage,
     imageAlt: 'CTPAT and BASC logos',
   },
   {
     title: 'Reputation Management',
-    description: 'We shield your business from defamatory claims by monitoring media, issuing content removal requests, and publishing on your behalf to certify your compliance.',
+    description: 'We monitor media, issuing content removal requests, and publishing on your behalf to certify your compliance.',
     image: reputationImage,
     imageAlt: 'Shield protecting a brand logo',
   },
@@ -107,6 +107,7 @@ const SolutionsPage = () => {
       ) : (
         <div className={styles.softwareSection}>
           <h2 className={styles.floatingHeader}>Features Coming Soon</h2>
+          <p>We're integrating information on plantation safety and quality with an agentic AI suite to give you a compliance and quality assurance back office without any of the cost!</p>
           <motion.div 
             className={`${offeringsStyles.offeringsList} ${styles.softwareOfferingsList}`}
             initial="hidden"
@@ -130,6 +131,7 @@ const SolutionsPage = () => {
               </motion.div>
             ))}
           </motion.div>
+          <CtaSection />
         </div>
       )}
     </div>
