@@ -83,7 +83,7 @@ const TrustedBySection = () => {
       <br />
       <br />
         <div className={styles.buttonContainer} style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-            <Link to="/blog/customer-stories" className={styles.secondaryButton}>
+            <Link to="/blog/customer-story-banaking" className={styles.secondaryButton}>
                 Read their Stories
             </Link>
         </div>

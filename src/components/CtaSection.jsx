@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './CtaSection.module.css';
+import { Link } from 'react-router-dom';
 
 const CtaSection = () => {
   return (
@@ -14,8 +15,8 @@ const CtaSection = () => {
           Bring your current thermograph contract - LoadGuard is the same price.
         </h3>
         <div className={styles.buttonGroup}>
-          <button className={styles.primaryButton} onClick={() => window.location.href = '/pilot'}>Start Your Pilot</button>
-          <button className={styles.secondaryButton} onClick={() => window.location.href = '/contact'}>Speak to an Expert</button>
+          <Link to="/pilot" className={styles.primaryButton}>Start Your Pilot</Link>
+          <Link to="/contact" className={styles.secondaryButton}>Speak to an Expert</Link>
         </div>
       </div>
     </section>
