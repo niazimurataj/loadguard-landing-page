@@ -2,7 +2,23 @@
     background-color: #0B111E;
     color: #fff;
     padding: 4rem 2rem;
-    text-align: center;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sticker {
+    background-color: #B91C1C;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .title {
@@ -18,3 +34,4 @@
     max-width: 800px;
     margin: 0 auto;
 }
+

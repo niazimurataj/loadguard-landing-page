@@ -73,9 +73,7 @@ const SolutionsPage = () => {
   );
 
   return (
-    <div className={`${styles.solutionsPage} gradient-background`}>
-      <h1 className={styles.mainHeader}>Supply Chain Technology Tailored for Banana Exporters and Importers</h1>
-      
+    <div className={`${styles.solutionsPage} gradient-background`}>      
       <div style={{ textAlign: 'center' }}>
         <div className={styles.toggleWrapper}>
           <button 
@@ -92,8 +90,7 @@ const SolutionsPage = () => {
           </button>
         </div>
       </div>
-
-      <div className={styles.separator}></div>
+        <h1 className={styles.mainHeader}>Supply Chain Technology Tailored for Banana Exporters and Importers</h1>
 
       {activeSolution === 'hardware' ? (
         <>
@@ -111,7 +108,7 @@ const SolutionsPage = () => {
           <PlantationIntelligenceHero />
           <SoftwareFeatureSection />
           <div className={styles.agenticServicesSection}>
-            <div className={styles.comingSoonSticker}>COMING SOON</div>
+            
             <div className={styles.softwareOfferingsList}>
               {softwareOfferingsData.map((offering, index) => (
                 <motion.div 

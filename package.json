@@ -19,6 +19,7 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "@react-google-maps/api": "^2.20.7",
     "@tailwindcss/vite": "^4.1.12",
+    "@types/recharts": "^1.8.29",
     "aws-amplify": "^6.15.4",
     "aws-sdk": "^2.1692.0",
     "class-variance-authority": "^0.7.1",
@@ -33,6 +34,7 @@
     "react-map-gl": "^7.1.9",
     "react-router-dom": "^7.7.1",
     "react-simple-maps": "^3.0.0",
+    "recharts": "^3.1.2",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.12"
