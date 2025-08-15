@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import styles from './SolutionsPage.module.css';
@@ -71,6 +71,12 @@ const SolutionsPage = () => {
   const [activeSolution, setActiveSolution] = useState(
     location.state?.activeTab || 'hardware'
   );
+
+  useEffect(() => {
+    if (location.state?.activeTab) {
+      setActiveSolution(location.state.activeTab);
+    }
+  }, [location.state?.activeTab]);
 
   return (
     <div className={`${styles.solutionsPage} gradient-background`}>
