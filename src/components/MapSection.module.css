@@ -1,91 +1,25 @@
 .mapSection {
-    padding: 6rem 2rem;
-    background: linear-gradient(180deg, #1F2937 0%, #111827 100%);
-    text-align: center;
-  }
-  
-  .sectionTitle {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #F9FAFB;
-    margin-bottom: 4rem;
-  }
-  
-  .mapContainer {
-    max-width: 700px;
-    margin: 0 auto;
-    border-radius: 16px;
-    padding: 3px;
-    position: relative;
-    background: #111827;
-    overflow: hidden;
-  }
-  
-  .mapContainer::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 150%;
-      height: 150%;
-      z-index: 1;
-      background: conic-gradient(
-          from 0deg,
-          transparent 0%,
-          transparent 75%,
-          var(--secondary-accent) 95%,
-          transparent 100%
-      );
-      animation: rotateBorder 6s linear infinite;
-  }
-  
-  @keyframes rotateBorder {
-      from { transform: translate(-50%, -50%) rotate(0deg); }
-      to { transform: translate(-50%, -50%) rotate(360deg); }
-  }
-  
-  .mapWrapper {
-      background: #1F2937;
-      border-radius: 14px;
-      position: relative;
-      z-index: 2;
-      overflow: hidden;
-  }
-  
-  .country {
-    fill: #4B5563;
-    stroke: #1F2937;
-    stroke-width: 0.5;
-    outline: none;
-  }
-  
-  .highlightedCountry {
-    fill: var(--primary-accent);
-    stroke: #F9FAFB;
-    stroke-width: 0.5;
-    outline: none;
-  }
-  
-  .markerDot {
-      fill: white;
-      stroke: black;
-      stroke-width: 1.5;
-  }
-  
-  /* ADDED: Styles for the animated routes */
-  .routeLine {
-      stroke: var(--primary-accent);
-      stroke-width: 1.5;
-      stroke-dasharray: 4 4; /* Creates a dashed line */
-      opacity: 0.7;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .mapSection {
-      padding: 4rem 1rem;
-    }
-    .sectionTitle {
-      font-size: 2rem;
-    }
-  }
+  padding: 6rem 2rem;
+  background-color: #FFFFFF;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1F2937;
+  margin-bottom: 4rem;
+}
+
+.mapContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.mapWrapper {
+  height: 600px; /* Set a fixed height for the map */
+  width: 100%;
+}
