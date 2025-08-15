@@ -7,10 +7,10 @@ const CircularSupplyChain = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.textContainer}>
-          <h2 className={styles.title}>Our Circular Supply Chain</h2>
+          <h2 className={styles.title}> Device Cycling 🔁</h2>
           <p className={styles.subtitle}>A sustainable approach to real-time monitoring.</p>
           <p className={styles.blurb}>
-            We are committed to sustainability. At the end of their lifecycle, our devices are returned, refurbished, and redeployed, minimizing e-waste and supporting a circular economy for a greener supply chain.
+            We provide you with the shipping labels to return devices to us once you're done - so that, at the end of their lifecycle, they can be refurbished and redeployed. Minimizing e-waste and supporting a circular economy for a more sustainable supply chain.
           </p>
         </div>
         <div className={styles.imageContainer}>

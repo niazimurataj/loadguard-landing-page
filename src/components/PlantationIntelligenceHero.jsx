@@ -141,8 +141,11 @@ const PlantationIntelligenceHero = () => {
         <h2 className={styles.title}>Plantation Intelligence</h2>
         <IntelligenceRadarChart />
         <p className={styles.subtitle}>
-          We fuse real-time device data with a live, interactive map of plantation risk factors. Our correlation engine proactively weights container scores, identifies anomalies, and alerts stakeholders before contamination or claims can occur.
+          We fuse real-time device data with a live, interactive map of plantation risk factors. Our correlation engine proactively weights container device scores, identifies anomalies, and alerts stakeholders before contamination or claims can occur.
         </p>
+        <button className={styles.ctaButton} onClick={() => window.location.href = '/pilot'}>
+          Get Started
+        </button>
       </div>
       <div className={styles.mapContainer}>
         {isLoaded ? (

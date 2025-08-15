@@ -12,7 +12,11 @@ const faqs = [
   },
   {
     question: 'What kind of sensors are included?',
-    answer: 'The device includes sensors for temperature, humidity, light, shock, and ethylene.',
+    answer: 'The device includes sensors for temperature, humidity, light, shock, and VOCs ("smell" sensors).',
+  },
+  {
+    question: 'Who is your solution for?',
+    answer: 'We provide devices for product importers and exporters (typically LatAM -> US/EU) to manage quality, stay safe from crime/smuggling, and avoid fines/penalties. If you are a Latin American exporter to the US or Europe - or a US/EU importer from LATAM - you are probably already familiar with the problem we solve.'
   },
 ];
 

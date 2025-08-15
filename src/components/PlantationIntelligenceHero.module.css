@@ -60,6 +60,30 @@
     border-bottom: 1px solid #2D3748;
     padding-bottom: 0.5rem;
   }
+
+  .ctaButton {
+    background: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-accent) 100%);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1.5rem;
+  }
+
+  .ctaButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  }
+
+  .ctaButton:active {
+    transform: translateY(0);
+  }
   
   .tooltipContent p {
     margin: 0.25rem 0;

@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Confetti from 'react-confetti';
 import logo from '../assets/lg-logo.png';
 
 const Header = () => {
+    const [showConfetti, setShowConfetti] = useState(false);
+
+    const handleConfettiClick = () => {
+        setShowConfetti(true);
+        setTimeout(() => setShowConfetti(false), 3000);
+    };
+
     const headerStyle = {
       display: 'flex',
       justifyContent: 'space-between',
@@ -44,6 +52,7 @@ const Header = () => {
   
     return (
       <header style={headerStyle}>
+        {showConfetti && <Confetti />}
         <Link to="/" style={logoStyle}>
           <span style={{
             display: 'flex',
@@ -77,8 +86,8 @@ const Header = () => {
           <Link to="/blog" style={navLinkStyle}>Blog</Link>
         </nav>
         <div>
-          <Link to="/contact" style={{...navLinkStyle, marginRight: '1rem'}}>Contact Us</Link>
-          <Link to="/pilot" style={ctaButtonStyle}>Request a Pilot</Link>
+          <Link to="/contact" style={{...navLinkStyle, marginRight: '1rem'}} onClick={handleConfettiClick}>Contact Us</Link>
+          <Link to="/pilot" style={ctaButtonStyle} onClick={handleConfettiClick}>Request a Pilot</Link>
           <Link to="/login" style={{
               ...ctaButtonStyle,
               marginRight: '1rem',

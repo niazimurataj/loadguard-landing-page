@@ -73,17 +73,23 @@ const SolutionsPage = () => {
   );
 
   return (
-    <div className={`${styles.solutionsPage} gradient-background`}>      
+    <div className={`${styles.solutionsPage} gradient-background`}>
       <div style={{ textAlign: 'center' }}>
         <div className={styles.toggleWrapper}>
+          <motion.div
+            className={styles.activeBg}
+            initial={false}
+            animate={{ x: activeSolution === 'hardware' ? 0 : '100%' }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          />
           <button 
-            className={`${styles.toggleButton} ${activeSolution === 'hardware' ? styles.active : ''}`}
+            className={styles.toggleButton}
             onClick={() => setActiveSolution('hardware')}
           >
             Hardware
           </button>
           <button 
-            className={`${styles.toggleButton} ${activeSolution === 'software' ? styles.active : ''}`}
+            className={styles.toggleButton}
             onClick={() => setActiveSolution('software')}
           >
             Software
