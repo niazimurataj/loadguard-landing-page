@@ -53,7 +53,7 @@ const mapOptions = {
 const MapSection = () => {
   const { isLoaded, loadError } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey:"AIzaSyCXso-0aFTEM1ys1MZk2okn0k0ODlnTA5g",
   });
 
   return (
