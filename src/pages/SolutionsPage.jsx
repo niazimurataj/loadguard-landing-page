@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import styles from './SolutionsPage.module.css';
 import offeringsStyles from '../components/OfferingsSection.module.css';
 import HardwareSolutionHero from '../components/HardwareSolutionHero.jsx';
@@ -50,6 +51,19 @@ const softwareOfferingsData = [
   }
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: i => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  })
+};
+
 const SolutionsPage = () => {
   const location = useLocation();
   const [activeSolution, setActiveSolution] = useState(
@@ -57,8 +71,8 @@ const SolutionsPage = () => {
   );
 
   return (
-    <div className="gradient-background">
-      <h1>Supply Chain Technology Tailored for Banana Exporters and Importers</h1>
+    <div className={`${styles.solutionsPage} gradient-background`}>
+      <h1 className={styles.mainHeader}>Supply Chain Technology Tailored for Banana Exporters and Importers</h1>
       
       <div style={{ textAlign: 'center' }}>
         <div className={styles.toggleWrapper}>
@@ -77,7 +91,7 @@ const SolutionsPage = () => {
         </div>
       </div>
 
-      <div className={styles.separator} style={{ margin: '0px 0px 0px 0px' }}></div>
+      <div className={styles.separator}></div>
 
       {activeSolution === 'hardware' ? (
         <>
@@ -91,11 +105,21 @@ const SolutionsPage = () => {
           <CtaSection />
         </>
       ) : (
-        <div>
-          <h2 className={styles.floatingHeader}>Features Coming Soon.</h2>
-          <div className={offeringsStyles.offeringsList}>
+        <div className={styles.softwareSection}>
+          <h2 className={styles.floatingHeader}>Features Coming Soon</h2>
+          <motion.div 
+            className={`${offeringsStyles.offeringsList} ${styles.softwareOfferingsList}`}
+            initial="hidden"
+            animate="visible"
+          >
             {softwareOfferingsData.map((offering, index) => (
-              <div key={index} className={`${offeringsStyles.offeringItem} ${styles.softwareOfferingCard}`}>
+              <motion.div 
+                key={index} 
+                className={`${offeringsStyles.offeringItem} ${styles.softwareOfferingCard}`}
+                custom={index}
+                variants={cardVariants}
+                whileHover={{ y: -8, transition: { duration: 0.2 } }}
+              >
                 <div className={offeringsStyles.textContainer}>
                   <h3 className={offeringsStyles.offeringTitle}>{offering.title}</h3>
                   <p className={offeringsStyles.offeringDescription}>{offering.description}</p>
@@ -103,9 +127,9 @@ const SolutionsPage = () => {
                 <div className={offeringsStyles.imageContainer}>
                   <img src={offering.image} alt={offering.imageAlt} className={offeringsStyles.offeringImage} /> 
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       )}
     </div>
