@@ -4,9 +4,8 @@ import React from 'react';
 import styles from './HeroSection.module.css';
 import { Link } from 'react-router-dom';
 
-// You can import assets like images directly.
-// import heroImage from '../assets/loadguard-hero-section.png';
-// import reeferImage from '../assets/reefer-image.png';
+// Import the hero image
+import heroImage from '../assets/loadguard-hero-section.png';
 
 const HeroSection = () => {
   return (
@@ -14,7 +13,7 @@ const HeroSection = () => {
     // Instead of className="hero-section", you use className={styles.heroSection}.
     <div className={styles.heroSection}>
       <div className={styles.heroContent}>
-        
+
         {/* Left side: Text content */}
         <div className={styles.heroText}>
           <h1 className={styles.heroTitle}>
@@ -26,6 +25,11 @@ const HeroSection = () => {
           <Link to="/pilot" className={styles.ctaButton}>
             Request a Pilot
           </Link>
+        </div>
+
+        {/* Mobile image - shown below text on mobile */}
+        <div className={styles.heroImageMobile}>
+          <img src={heroImage} alt="LoadGuard Thermograph Device" />
         </div>
 
       </div>
