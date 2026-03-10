@@ -22,39 +22,48 @@ const AppContent = () => {
   const { theme } = useContext(ThemeContext);
 
   const appContainerStyle = {
-      display: 'flex',
-      flexDirection: 'column',
-      minHeight: '100vh',
-      backgroundColor: theme === 'light' ? '#F9FAFB' : '#000',
-      color: theme === 'light' ? '#111827' : '#fff',
-      transition: 'background-color 0.5s, color 0.5s',
-      position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+    backgroundColor: theme === 'light' ? '#F9FAFB' : '#000',
+    color: theme === 'light' ? '#111827' : '#fff',
+    transition: 'background-color 0.5s, color 0.5s',
+    position: 'relative',
   };
 
   const mainContentStyle = {
-      flexGrow: 1,
+    flexGrow: 1,
   };
 
   return (
-    <div style={appContainerStyle} className={theme === 'dark' ? darkThemeStyles.darkThemeAnimation : ''}>
-      <Header />
-      <main style={mainContentStyle}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/solutions" element={<SolutionsPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/adversary-universe" element={<AdversaryUniversePage />} />
-          <Route path="/blog/:slug" element={<SinglePostPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/members" element={<MembersPage />} />
-          <Route path="/pilot" element={<PilotRequestPage />} />
-        </Routes>
-      </main>
-      <Footer />
-      <Toaster />
-    </div>
+    <>
+      <div style={appContainerStyle} className={theme === 'dark' ? darkThemeStyles.darkThemeAnimation : ''}>
+        <Header />
+        <main style={mainContentStyle} className="responsive-main">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/solutions" element={<SolutionsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/adversary-universe" element={<AdversaryUniversePage />} />
+            <Route path="/blog/:slug" element={<SinglePostPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/members" element={<MembersPage />} />
+            <Route path="/pilot" element={<PilotRequestPage />} />
+          </Routes>
+        </main>
+        <Footer />
+        <Toaster />
+      </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .responsive-main {
+            padding: 0 !important;
+          }
+        }
+      `}</style>
+    </>
   );
 }
 

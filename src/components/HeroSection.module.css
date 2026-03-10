@@ -1,159 +1,196 @@
 .heroSection {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 3rem 2rem;
-    background-color: #111827; /* Dark text color as background for contrast */
-    color: #F9FAFB; /* Light background color as text */
-    min-height: 100vh;
-    max-height: 100vh;
-    overflow: hidden;
-  }
-  
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3rem 2rem;
+  background-color: #111827;
+  /* Dark text color as background for contrast */
+  color: #F9FAFB;
+  /* Light background color as text */
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  background-image: url('../assets/loadguard-hero-section.png');
+  background-size: 70% auto;
+  /* Make image 70% of container width */
+  background-position: right center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.heroText {
+  position: relative;
+  max-width: 500px;
+  padding: 2.5rem;
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  z-index: 15;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  /* A subtle gradient can add a premium feel */
+  background: linear-gradient(to right, #ffffff, #d1d5db);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroDescription {
+  font-size: 1.1rem;
+  color: #D1D5DB;
+  /* A slightly dimmer white for the paragraph */
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.ctaButton {
+  background: var(--primary-accent);
+  /* Using variable from index.css */
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 25px rgba(220, 38, 38, 0.3);
+}
+
+/* Mobile-only image container - hidden on desktop */
+.heroImageMobile {
+  display: none;
+}
+
+.heroImageMobile img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+/* Responsive Design for smaller screens */
+@media (max-width: 992px) {
   .heroSection::before {
-    content: '';
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    bottom: 2rem;
-    left: 2rem;
-    background-image: url('../assets/loadguard-hero-section.png');
-    background-size: 70% auto; /* Make image 70% of container width */
-    background-position: right center;
-    background-repeat: no-repeat;
-    z-index: 1;
+    background-size: 75% auto;
+    /* Slightly larger on tablets */
   }
-  
-  .heroContent {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    z-index: 10;
-  }
-  
+
   .heroText {
-    position: relative;
-    max-width: 500px;
-    padding: 2.5rem;
-    background: rgba(17, 24, 39, 0.85);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    z-index: 15;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    padding: 2rem;
   }
-  
+
   .heroTitle {
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    /* A subtle gradient can add a premium feel */
-    background: linear-gradient(to right, #ffffff, #d1d5db);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 2.2rem;
   }
-  
+
   .heroDescription {
-    font-size: 1.1rem;
-    color: #D1D5DB; /* A slightly dimmer white for the paragraph */
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
   }
-  
-  .ctaButton {
-    background: var(--primary-accent); /* Using variable from index.css */
-    color: white;
-    border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
-  }
-  
-  .ctaButton:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 7px 25px rgba(220, 38, 38, 0.3);
-  }
-  
+}
 
-  
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 2rem 1rem;
+    min-height: auto;
+    max-height: none;
+    overflow: visible;
+  }
 
-  
-  /* Responsive Design for smaller screens */
-  @media (max-width: 992px) {
-    .heroSection::before {
-      background-size: 75% auto; /* Slightly larger on tablets */
-    }
-    
-    .heroText {
-      max-width: 450px;
-      padding: 2rem;
-    }
-  
-    .heroTitle {
-      font-size: 2.2rem;
-    }
-    
-    .heroDescription {
-      font-size: 1rem;
-      margin-bottom: 1.2rem;
-    }
+  /* Hide the background image on tablet and mobile */
+  .heroSection::before {
+    display: none;
   }
-  
-  @media (max-width: 768px) {
-    .heroSection {
-      padding: 2rem 1rem;
-    }
-    
-    .heroSection::before {
-      background-size: 80% auto; /* Larger on small tablets */
-    }
-    
-    .heroText {
-      max-width: 400px;
-      padding: 1.5rem;
-    }
-    
-    .heroTitle {
-      font-size: 1.8rem;
-    }
-    
-    .heroDescription {
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-    }
+
+  .heroContent {
+    flex-direction: column;
+    gap: 2rem;
   }
-  
-  @media (max-width: 576px) {
-      .heroSection {
-          padding: 1.5rem 1rem;
-      }
-      
-      .heroSection::before {
-        background-size: 90% auto; /* Nearly full width on mobile */
-      }
-      
-      .heroText {
-        max-width: 350px;
-        padding: 1.2rem;
-      }
-      
-      .heroTitle {
-          font-size: 1.5rem;
-          margin-bottom: 0.8rem;
-      }
-      .heroDescription {
-          font-size: 0.9rem;
-          margin-bottom: 1rem;
-      }
+
+  .heroText {
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(17, 24, 39, 0.95);
   }
-  
+
+  /* Show the mobile image below text */
+  .heroImageMobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .heroDescription {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .heroSection {
+    padding: 1.5rem 1rem;
+  }
+
+  .heroText {
+    padding: 1.2rem;
+  }
+
+  .heroImageMobile img {
+    max-width: 100%;
+  }
+
+  .heroTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .heroDescription {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+}

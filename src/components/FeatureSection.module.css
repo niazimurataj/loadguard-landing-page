@@ -55,3 +55,65 @@
   color: #4B5563;
   line-height: 1.6;
 }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+  
+  .featureCard {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featuresSection {
+    padding: 4rem 1.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .featuresContainer {
+    gap: 1.5rem;
+  }
+  
+  .featureCard {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .featureTitle {
+    font-size: 1.3rem;
+  }
+  
+  .featureDescription {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .featuresSection {
+    padding: 3rem 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .featureCard {
+    padding: 2rem;
+  }
+  
+  .featureTitle {
+    font-size: 1.2rem;
+  }
+  
+  .featureDescription {
+    font-size: 0.95rem;
+  }
+}

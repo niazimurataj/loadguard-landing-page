@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -61,6 +63,23 @@ body {
 main {
   flex-grow: 1;
   padding: 2rem;
+}
+
+/* Mobile-first responsive utilities */
+@media (max-width: 768px) {
+  main {
+    padding: 0;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 13px;
+  }
 }
 
 .gradient-background {
@@ -153,6 +172,7 @@ main {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
